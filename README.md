@@ -50,27 +50,29 @@ You can now use the `heroku` CLI program - try running `heroku apps` to confirm 
 
 ## user Stories
 
+[View Project](https://github.com/users/dlhamilton/projects/)
+
 ### Must Have
 
-- As a data scientist, I must create a machine learning model that can differentiate between benign and malignant skin lesions, so that the system can provide accurate diagnoses.
-- As a user, I need a web application where I can upload an image of a skin lesion and receive an instant prediction, so I can assess the urgency of medical consultation.
-- As a user, I need the system to provide a confidence level with each prediction, so I can understand how certain the model is about its diagnosis.
-- As a healthcare professional, I need the AI model to recommend immediate medical consultation if a skin lesion is predicted as malignant with high confidence, so I can expedite the treatment process.
+- [#1](https://github.com/dlhamilton/AI-DermDiagnosis/issues/1) As a data scientist, I must create a machine learning model that can differentiate between benign and malignant skin lesions, so that the system can provide accurate diagnoses.
+- [#2](https://github.com/dlhamilton/AI-DermDiagnosis/issues/2) As a user, I need a web application where I can upload an image of a skin lesion and receive an instant predition, so I can assess the urgency of medical consultation.
+- [#3](https://github.com/dlhamilton/AI-DermDiagnosis/issues/3) As a user, I need the system to provide a confidence level with each prediction, so I can understand how certain the model is about its diagnosis.
+- [#4](https://github.com/dlhamilton/AI-DermDiagnosis/issues/4) As a healthcare professional, I need the AI model to recommend immediate medical consultation if a skin lesion is predicted as malignant with high confidence, so I can expedite the treatment process.
 
 ### Should Have
 
-- As a data scientist, I should implement a clustering algorithm to identify common characteristics associated with benign or malignant conditions, to improve the machine learning model's understanding and prediction accuracy.
-- As a user, I should receive information about the associated cluster when I upload an image, so I can learn more about the nature of the skin lesion.
+- [#5](https://github.com/dlhamilton/AI-DermDiagnosis/issues/5) As a data scientist, I should implement a clustering algorithm to identify common characteristics associated with benign or malignant conditions, to improve the machine learning model's understanding and prediction accuracy.
+- [#6](https://github.com/dlhamilton/AI-DermDiagnosis/issues/6) As a user, I should receive information about the associated cluster when I upload an image, so I can learn more about the nature of the skin lesion.
 
 ### Could Have
 
-- As a user, I could have access to a database of example skin lesion images within the app, so I can compare my skin lesion with others.
-- As a healthcare professional, I could have access to the details of the machine learning model's prediction process, so I can better understand how the AI system reached its conclusion.
+- [#7](https://github.com/dlhamilton/AI-DermDiagnosis/issues/7) As a user, I could have access to a database of example skin lesion images within the app, so I can compare my skin lesion with others.
+- [#8](https://github.com/dlhamilton/AI-DermDiagnosis/issues/8) As a healthcare professional, I could have access to the details of the machine learning model's prediction process, so I can better understand how the AI system reached its conclusion.
 
 ### Won't Have this Time
 
-- As a user, I won't have the ability to use the app for definitive medical diagnosis, as the app serves to provide an additional layer of information and should not replace professional medical advice.
-- As a data scientist, I won't develop a feature for users to track changes in their skin lesions over time within the app, as it falls outside the scope of the current project.
+- [#9](https://github.com/dlhamilton/AI-DermDiagnosis/issues/9) As a user, I won't have the ability to use the app for definitive medical diagnosis, as the app serves to provide an additional layer of information and should not replace professional medical advice.
+- [#10](https://github.com/dlhamilton/AI-DermDiagnosis/issues/10) As a data scientist, I won't develop a feature for users to track changes in their skin lesions over time within the app, as it falls outside the scope of the current project.
 
 ## Epics
 
@@ -176,7 +178,23 @@ This solution aims to augment the decision-making process for dermatologists and
 
 ## Hypothesis and how to validate?
 
-- List here your project hypothesis(es) and how you envision validating it (them)
+### Hypothesis 1
+
+A clustering algorithm can identify patterns and characteristics commonly associated with benign or malignant conditions, providing an additional layer of information and insights.
+
+**Validation Approach**: After applying the clustering algorithm on the dataset, review the clusters' properties manually. If clusters show distinct characteristics aligning with benign or malignant classes, the hypothesis is validated.
+
+### Hypothesis 2
+
+Providing a confidence level for each prediction would allow users to gauge the urgency of a medical consultation.
+
+**Validation Approach**: Collect user feedback or conduct user testing to determine whether the confidence level helps users make informed decisions about seeking medical advice. High user satisfaction and increased rate of medical consultations following high-confidence malignant predictions would validate this hypothesis.
+
+### Hypothesis 3
+
+An AI-powered web application will expedite the skin cancer diagnosis process, leading to early detection and better survival rates.
+
+**Validation Approach**: Monitor the usage metrics of the web application, including the number of unique users, number of images uploaded, and time to consultation after receiving a prediction. Additionally, conduct surveys or interviews with healthcare professionals to determine if they've seen improvements in the early detection and treatment of skin cancers. Positive feedback and statistics would validate this hypothesis.
 
 ## The rationale to map the business requirements to the Data Visualizations and ML tasks
 
