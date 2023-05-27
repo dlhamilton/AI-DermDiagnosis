@@ -196,13 +196,13 @@ An AI-powered web application will expedite the skin cancer diagnosis process, l
 
 **Validation Approach**: Monitor the usage metrics of the web application, including the number of unique users, number of images uploaded, and time to consultation after receiving a prediction. Additionally, conduct surveys or interviews with healthcare professionals to determine if they've seen improvements in the early detection and treatment of skin cancers. Positive feedback and statistics would validate this hypothesis.
 
-## The rationale to map the business requirements to the Data Visualizations and ML tasks
+## The rationale to map the business requirements to the Data Visualisations and ML tasks
 
-- List your business requirements and a rationale to map them to the Data Visualizations and ML tasks
+- List your business requirements and a rationale to map them to the Data Visualisations and ML tasks
 
 ## ML Business Case
 
-- In the previous bullet, you potentially visualized an ML task to answer a business requirement. You should frame the business case using the method we covered in the course
+- In the previous bullet, you potentially visualised an ML task to answer a business requirement. You should frame the business case using the method we covered in the course
 
 ## Dashboard Design
 
