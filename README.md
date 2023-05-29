@@ -48,28 +48,28 @@ To log into the Heroku toolbelt CLI:
 
 You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with *Regenerate API Key*.
 
-## user Stories
+## User Stories
 
 [View Project](https://github.com/users/dlhamilton/projects/)
 
-### Must Have
+### Must Have User Stories
 
 - [#1](https://github.com/dlhamilton/AI-DermDiagnosis/issues/1) As a data scientist, I must create a machine learning model that can differentiate between benign and malignant skin lesions, so that the system can provide accurate diagnoses.
 - [#2](https://github.com/dlhamilton/AI-DermDiagnosis/issues/2) As a user, I need a web application where I can upload an image of a skin lesion and receive an instant predition, so I can assess the urgency of medical consultation.
 - [#3](https://github.com/dlhamilton/AI-DermDiagnosis/issues/3) As a user, I need the system to provide a confidence level with each prediction, so I can understand how certain the model is about its diagnosis.
 - [#4](https://github.com/dlhamilton/AI-DermDiagnosis/issues/4) As a healthcare professional, I need the AI model to recommend immediate medical consultation if a skin lesion is predicted as malignant with high confidence, so I can expedite the treatment process.
 
-### Should Have
+### Should Have User Stories
 
 - [#5](https://github.com/dlhamilton/AI-DermDiagnosis/issues/5) As a data scientist, I should implement a clustering algorithm to identify common characteristics associated with benign or malignant conditions, to improve the machine learning model's understanding and prediction accuracy.
 - [#6](https://github.com/dlhamilton/AI-DermDiagnosis/issues/6) As a user, I should receive information about the associated cluster when I upload an image, so I can learn more about the nature of the skin lesion.
 
-### Could Have
+### Could Have User Stories
 
 - [#7](https://github.com/dlhamilton/AI-DermDiagnosis/issues/7) As a user, I could have access to a database of example skin lesion images within the app, so I can compare my skin lesion with others.
 - [#8](https://github.com/dlhamilton/AI-DermDiagnosis/issues/8) As a healthcare professional, I could have access to the details of the machine learning model's prediction process, so I can better understand how the AI system reached its conclusion.
 
-### Won't Have this Time
+### Won't Have this Time User Stories
 
 - [#9](https://github.com/dlhamilton/AI-DermDiagnosis/issues/9) As a user, I won't have the ability to use the app for definitive medical diagnosis, as the app serves to provide an additional layer of information and should not replace professional medical advice.
 - [#10](https://github.com/dlhamilton/AI-DermDiagnosis/issues/10) As a data scientist, I won't develop a feature for users to track changes in their skin lesions over time within the app, as it falls outside the scope of the current project.
@@ -78,27 +78,27 @@ You can now use the `heroku` CLI program - try running `heroku apps` to confirm 
 
 ### Epic 1: Machine Learning Model Development
 
-#### Must Have
+#### Epic 1 - Must Have
 
 - As a data scientist, I must create a machine learning model that can differentiate between benign and malignant skin lesions, so that the system can provide accurate diagnoses.
 
-#### Should Have
+#### Epic 1 - Should Have
 
 - As a data scientist, I should implement a clustering algorithm to identify common characteristics associated with benign or malignant conditions, to improve the machine learning model's understanding and prediction accuracy.
   
 ### Epic 2: Web Application Design and Deployment
 
-#### Must Have
+#### Epic 2 - Must Have
 
 - As a user, I need a web application where I can upload an image of a skin lesion and receive an instant prediction, so I can assess the urgency of medical consultation.
 
-#### Could Have
+#### Epic 2 - Could Have
 
 - As a user, I could have access to a database of example skin lesion images within the app, so I can compare my skin lesion with others.
 
 ### Epic 3: Confidence Level and Medical Consultation Recommendation
 
-#### Must Have
+#### Epic 3 - Must Have
 
 - As a user, I need the system to provide a confidence level with each prediction, so I can understand how certain the model is about its diagnosis.
 - As a healthcare professional, I need the AI model to recommend immediate medical consultation if a skin lesion is predicted as malignant with high confidence, so I can expedite the treatment process.
@@ -106,19 +106,19 @@ You can now use the `heroku` CLI program - try running `heroku apps` to confirm 
 
 ### Epic 4: Cluster Identification and Display
 
-#### Should Have
+#### Epic 4 - Should Have
 
 - As a user, I should receive information about the associated cluster when I upload an image, so I can learn more about the nature of the skin lesion.
 
 ### Epic 5: Information Accessibility for Healthcare Professionals
 
-#### Could Have
+#### Epic 5 - Could Have
 
 - As a healthcare professional, I could have access to the details of the machine learning model's prediction process, so I can better understand how the AI system reached its conclusion.
 
 ### Epic 6: Limitations and Future Enhancements
 
-#### Won't Have this Time
+#### Epic 6 - Won't Have this Time
 
 - As a user, I won't have the ability to use the app for definitive medical diagnosis, as the app serves to provide an additional layer of information and should not replace professional medical advice.
 - As a data scientist, I won't develop a feature for users to track changes in their skin lesions over time within the app, as it falls outside the scope of the current project.
@@ -244,13 +244,83 @@ An AI-powered web application will expedite the skin cancer diagnosis process, l
 
 ## ML Business Case
 
-- In the previous bullet, you potentially visualised an ML task to answer a business requirement. You should frame the business case using the method we covered in the course
+- What is the business objective requiring a ML solution?
+
+The business objective is to develop an AI-powered application that assists in the early identification of skin cancer. The AI model will differentiate between malignant and benign skin lesions based on images, thereby providing a rapid diagnosis and recommending further medical consultation when necessary.
+
+- Can traditional data analysis be used?
+
+Traditional data analysis can be used to some extent, such as finding correlations or identifying patterns. However, given the complexity of image analysis and the need for predictive capabilities, machine learning, specifically deep learning methods, would likely be more efficient and effective.
+
+- Does the customer need a dashboard or an API endpoint?
+
+The customer needs a web application where users can upload an image of a skin lesion and receive an immediate prediction. This would likely be implemented through a combination of a user-friendly dashboard that interact with the underlying machine learning model.
+
+- What does success look like?
+
+Success would be a functional application that can accurately differentiate between benign and malignant skin lesions, provide confidence levels for its predictions, and suggest further medical consultation when necessary. The solution should be reliable enough to assist healthcare professionals in their decision-making process, leading to earlier and more effective treatment of skin cancer.
+
+- Can you break down the project into epics and user stories?
+
+Yes epics and user stories for this project are shown above.
+
+- Ethical or privacy concerns?
+
+Yes, this project does have ethical and privacy concerns. It's crucial to ensure that all skin lesion images are anonymised and that user data is securely stored and handled. Consent should be obtained before using any personal data, and the app should comply with relevant data protection regulations. Also, the solution should not replace professional medical advice; it's meant to assist in the initial screening process.
+
+- What level of prediction performance is needed?
+
+Given the serious implications of false negatives (missing a malignant lesion) and false positives (misidentifying a benign lesion as malignant), a high level of prediction performance is needed. The model should strive for high sensitivity (minimising false negatives) at ideally over 90% and specificity (minimising false positives) above 85%.
+
+- What are the project input and intended outputs?
+
+The input for the project will be images of skin lesions. The intended output will be a diagnosis (benign or malignant), a confidence level associated with the prediction, and in the case of a high-confidence malignant prediction, a recommendation for immediate medical consultation.
+
+- Does the data suggest a particular model?
+
+Given the nature of the data (images) and the task (classification), a Convolutional Neural Network (CNN) is a suitable model as it has proven to be effective for image classification tasks. Depending on the results of initial experiments, more advanced models or ensemble methods might be considered.
+
+- How will the customer benefit?
+
+The customer will benefit from a faster and more efficient initial screening process for skin cancer. The application can provide immediate feedback, allowing for potential early detection and treatment. It should also reduce the workload for healthcare professionals by serving as a first step in the diagnosis process.
+
+### Possible Heuristics
+
+Image Preprocessing: Images may need to be resized or normalised to ensure consistency across the dataset. This can involve scaling the images to have the same width and height and normalising the pixel values.
+
+Class Imbalance: If the dataset has many more examples of one class (e.g., benign) than another (e.g., malignant), it may be necessary to balance the classes using techniques like oversampling the minority class, undersampling the majority class, or using a combination of both (SMOTE).
+
+Splitting the Data: A standard heuristic in machine learning is to split the available data into training, validation, and test sets. A common split is 70% for training, 10% for validation, and 10% for testing.
+
+Model Selection: Start with simpler models and progress to more complex ones if necessary. This heuristic helps to prevent overfitting and reduces computational resources.
+
+Confidence Thresholds: Establish a threshold for determining when the model's prediction confidence is high enough to recommend immediate medical consultation. This can be determined by assessing the model's performance at various threshold levels on a validation set.
+
+Error Analysis: If the model's performance is not satisfactory, perform error analysis to understand the types of mistakes the model is making. This can often provide insights into what can be improved.
+
+Model Interpretability: Even though more complex models like deep learning might provide better performance, simpler models, or the use of interpretability techniques might be preferred in this case, given the importance of the healthcare professionals being able to understand and trust the model's predictions.
+
+Data Privacy: Given the sensitive nature of medical images, ensure all data is handled in compliance with relevant privacy laws and regulations. Images should be anonymised, and any personally identifiable information should be removed.
 
 ## Dashboard Design
 
 - List all dashboard pages and their content, either blocks of information or widgets, like buttons, checkboxes, images, or any other item that your dashboard library supports.
 
 - Later, during the project development, you may revisit your dashboard plan to update a given feature (for example, at the beginning of the project you were confident you would use a given plot to display an insight but subsequently you used another plot type).
+
+Pages
+
+Project Summary - This page provides an overall summary of the project. Showing the outline of the system, information about the data set, the business requirments and a link to this read me.
+
+Lesion Exploration / Clusters Page -  This page offers visualisations of the data clusters identified in the skin lesion images. It can display a scatter plot or other visualization of the clusters and give details about the characteristics associated with each cluster.
+
+Upload page and Results - This page allows users (either individuals or healthcare professionals) to upload a skin lesion image for diagnosis. After the image is processed, the diagnosis, confidence level, associated cluster will be displayed and an explanation of what the cluster means.
+
+Project Hypothesis and Validation - This page contains information related to the initial assumptions or hypotheses made about the project, and how those hypotheses are being validated or have been validated.
+
+ML Performance Page - This page presents detailed metrics on the performance of the AI model. It might include confusion matrix, ROC curve, precision-recall curve, F1 score, AUC-ROC value, etc. It can also include a comparison of performance metrics over different versions of the model.
+
+Feedback / Reporting Page - This page allows users to provide feedback on the system's performance and report any issues. It could be a form where users can rate the system, leave comments, or report false positives/negatives. It will also show future features for the system.
 
 ## Unfixed Bugs
 
