@@ -1,0 +1,35 @@
+<!-- # Exclude test files and directories
+tests/
+**/*.test.py
+
+# Exclude documentation
+docs/
+
+# Exclude build and temporary files
+*.log
+*.tmp
+*.bak
+*.swp
+*.pyc
+__pycache__/
+dist/
+build/
+*.egg-info/
+*.egg
+*.o
+*.so
+*.lib
+
+# Exclude version control directories
+.git/
+.hg/
+.svn/
+.cvsignore
+.gitignore
+
+# Exclude editor backup and config files
+*.sublime-*
+*.vscode/
+.idea/
+*.vim
+*.tmux -->
