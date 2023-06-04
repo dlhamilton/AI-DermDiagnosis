@@ -176,6 +176,8 @@ In all cases, regardless of the diagnostic method, a prediction by the AI should
 
   - **Business Requirement 7**: The model's performance will be evaluated using balanced performance metrics such as F1 Score and AUC-ROC, aiming for scores above 0.85 and 0.9, respectively.
 
+  - **Business Requirement 8**: The client is interested to have a study to visually differentiate between lesions.
+
 This solution aims to augment the decision-making process for dermatologists and bring about a transformative change in the early detection and treatment of skin cancer.
 
 ## Hypothesis and how to validate?
@@ -241,6 +243,12 @@ An AI-powered web application will expedite the skin cancer diagnosis process, l
 - **Business Requirement 7**: The model's performance will be evaluated using balanced performance metrics such as F1 Score and AUC-ROC, aiming for scores above 0.85 and 0.9, respectively.
 
 **Rationale**: These performance metrics are integral to assess the model's performance in a balanced manner, especially in the case of imbalanced datasets. ROC curves and Precision-Recall curves provide visualisations to comprehend the performance of the model at various threshold settings. Additionally, the F1 Score is a harmonic mean of precision and recall, providing a singular metric that balances both these important measures.
+
+### Business Requirement 8
+
+- **Business Requirement 8**: The client is interested to have a study to visually differentiate between lesions.
+
+**Rationale**: TODO
 
 ## ML Business Case
 
