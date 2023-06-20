@@ -252,6 +252,15 @@ An AI-powered web application will expedite the skin cancer diagnosis process, l
 
 ## ML Business Case
 
+- We want an ML model to predict the lesion class, based on historical image data. It is a supervised model, a 7-class, single-label, classification model.
+- Our ideal outcome is to provide the medical team and patients a faster and more reliable diagnostic for lesion detection.
+- The model success metrics are
+- - Accuracy of 65% or above on the test set.
+- The model output is defined as a flag, indicating what type of lesion and the associated probability of being part of that class. The user will take a picture of the lesion and upload the picture to the App. The prediction is made on the fly (not in batches).
+- Heuristics: The current diagnostic needs an experienced staff and detailed inspection to distinguish the type of lesion and that has a 70% accuracy. Further inspections and processes are needed to get the exact type of lesion. On top of that, some specific hospital facilities need more trained staff and expertise and are typically understaffed. There is also lokng waits to see a GP for a lesion check.
+- The training data to fit the model come from the International Skin Imaging Collaboration (ISIC). This dataset contains about 10+ thousand images. We have extracted the images from Kaggle.
+Train data - target: type class; features: all images
+
 - What is the business objective requiring a ML solution?
 
 The business objective is to develop an AI-powered application that assists in the early identification of skin cancer. The AI model will differentiate between malignant and benign skin lesions based on images, thereby providing a rapid diagnosis and recommending further medical consultation when necessary.
