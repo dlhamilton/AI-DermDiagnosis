@@ -162,21 +162,19 @@ In all cases, regardless of the diagnostic method, a prediction by the AI should
 
 - The proposed AI model could provide instant predictions with associated confidence levels, significantly reducing the time required to identify potential malignant skin lesions. This immediacy could lead to earlier consultations and interventions, increasing the chances of successful treatment. It's important to note that while the AI model can assist with initial screening and diagnosis, any prediction it makes must be verified by a healthcare professional to ensure accuracy and safety.
 
-  - **Business Requirement 1**: The client aims to create a machine learning model that can visually differentiate a benign skin lesion from a malignant one using the lesion images. The model should be capable of reaching an accuracy of at least 90%.
+  - **Business Requirement 1**: The client aims to visually differentiate lesions. The model should be capable of reaching an accuracy of at least 70%.
 
   - **Business Requirement 2**: The model should provide a confidence level for each prediction.
 
-  - **Business Requirement 3**: If a skin lesion is predicted as malignant with high confidence, the system should recommend immediate medical consultation. The precision of these recommendations should be over 85%.
+  - **Business Requirement 3**: If a skin lesion is predicted as malignant with high confidence, the system should recommend immediate medical consultation.
 
-  - **Business Requirement 4**: Use clustering algorithms to identify patterns within the skin lesion images. Helping to understand characteristics commonly associated with benign or malignant conditions.
+  - **Business Requirement 4**: The project will deliver a web application where users can upload a skin lesion image, and the system will provide a diagnosis, a confidence level of the prediction.
 
-  - **Business Requirement 5**: The project will deliver a web application where users can upload a skin lesion image, and the system will provide a diagnosis, a confidence level of the prediction, and an associated cluster.
+  - **Business Requirement 5**: The AI model's insights should assist healthcare professionals in making informed decisions about the treatment process.
 
-  - **Business Requirement 6**: The AI model's insights should assist healthcare professionals in making informed decisions about the treatment process.
+  - **Business Requirement 6**: The model's performance will be evaluated using balanced performance metrics such as F1 Score aiming for scores above 0.7.
 
-  - **Business Requirement 7**: The model's performance will be evaluated using balanced performance metrics such as F1 Score and AUC-ROC, aiming for scores above 0.85 and 0.9, respectively.
-
-  - **Business Requirement 8**: The client is interested to have a study to visually differentiate between lesions.
+  - **Business Requirement 7**: The client is interested to have a study to visually differentiate between lesions.
 
 This solution aims to augment the decision-making process for dermatologists and bring about a transformative change in the early detection and treatment of skin cancer.
 
@@ -204,7 +202,7 @@ An AI-powered web application will expedite the skin cancer diagnosis process, l
 
 ### Business Requirement 1
 
-- **Business Requirement 1**: The client aims to create a machine learning model that can visually differentiate a benign skin lesion from a malignant one using the lesion images. The model should be capable of reaching an accuracy of at least 90%.
+- **Business Requirement 1**: The client aims to visually differentiate lesions. The model should be capable of reaching an accuracy of at least 70%.
 
 **Rationale**: This maps to a binary classification machine learning task, with 'benign' and 'malignant' as the target categories. Training this model will require labeled data, i.e., skin lesion images diagnosed as either benign or malignant. Data visualisation tasks like distribution plots can reveal the class balance, while performance metrics such as confusion matrix and ROC curve can be visualised to evaluate the model's performance.
 
@@ -216,39 +214,33 @@ An AI-powered web application will expedite the skin cancer diagnosis process, l
 
 ### Business Requirement 3
 
-- **Business Requirement 3**: If a skin lesion is predicted as malignant with high confidence, the system should recommend immediate medical consultation. The precision of these recommendations should be over 85%.
+- **Business Requirement 3**: If a skin lesion is predicted as malignant with high confidence, the system should recommend immediate medical consultation.
 
-**Rationale**: This requirement involves the application of a decision rule on the model's output. It doesn't directly correspond to a specific ML task or data visualisation, but its effectiveness can be validated through techniques like Precision-Recall curves, which offer a trade-off visualisation between recall (sensitivity) and precision for different threshold settings.
+**Rationale**: This requirement involves the application of a decision rule on the model's output. It doesn't directly correspond to a specific ML task or data visualisation, but its effectiveness can be validated through techniques like Precision-Recall, which offer a trade-off visualisation between recall (sensitivity) and precision for different threshold settings.
 
 ### Business Requirement 4
 
-- **Business Requirement 4**: Use clustering algorithms to identify patterns within the skin lesion images. Helping to understand characteristics commonly associated with benign or malignant conditions.
-
-**Rationale**: This maps directly to the unsupervised machine learning task of clustering. Clustering can reveal intrinsic structures and common patterns within the data. Visualisation techniques like t-SNE or UMAP can be applied to present the high-dimensional data in two dimensions, which can visually expose the discovered clusters.
-
-### Business Requirement 5
-
-- **Business Requirement 5**: The project will deliver a web application where users can upload a skin lesion image, and the system will provide a diagnosis, a confidence level of the prediction, and an associated cluster.
+- **Business Requirement 4**: The project will deliver a web application where users can upload a skin lesion image, and the system will provide a diagnosis, a confidence level of the prediction.
 
 **Rationale**: While not a direct ML task, this requirement relates to deploying the model within a user-accessible application. Displaying the model's results, including the diagnosis, associated confidence level, and cluster information, necessitates the application of data visualisations in a user-friendly interface.
 
+### Business Requirement 5
+
+- **Business Requirement 5**: The AI model's insights should assist healthcare professionals in making informed decisions about the treatment process.
+
+**Rationale**: This requirement pertains to the application of the ML model's results in a real-world healthcare context. Clear and comprehensible data visualisations are crucial for this requirement. show the confidence levels, for each lesion type that can aid healthcare professionals.
+
 ### Business Requirement 6
 
-- **Business Requirement 6**: The AI model's insights should assist healthcare professionals in making informed decisions about the treatment process.
+- **Business Requirement 6**: The model's performance will be evaluated using balanced performance metrics such as F1 Score aiming for scores above 0.7.
 
-**Rationale**: This requirement pertains to the application of the ML model's results in a real-world healthcare context. Clear and comprehensible data visualisations are crucial for this requirement. These might include bar charts representing confidence levels, scatter plots for cluster representation, or feature importance plots that can aid healthcare professionals in understanding the basis of the model's decisions.
+**Rationale**: These performance metrics are integral to assess the model's performance in a balanced manner, especially in the case of imbalanced datasets. Precision-Recall  provide visualisations to comprehend the performance of the model at various threshold settings. Additionally, the F1 Score is a harmonic mean of precision and recall, providing a singular metric that balances both these important measures.
 
 ### Business Requirement 7
 
-- **Business Requirement 7**: The model's performance will be evaluated using balanced performance metrics such as F1 Score and AUC-ROC, aiming for scores above 0.85 and 0.9, respectively.
+- **Business Requirement 7**: The client is interested to have a study to visually differentiate between lesions.
 
-**Rationale**: These performance metrics are integral to assess the model's performance in a balanced manner, especially in the case of imbalanced datasets. ROC curves and Precision-Recall curves provide visualisations to comprehend the performance of the model at various threshold settings. Additionally, the F1 Score is a harmonic mean of precision and recall, providing a singular metric that balances both these important measures.
-
-### Business Requirement 8
-
-- **Business Requirement 8**: The client is interested to have a study to visually differentiate between lesions.
-
-**Rationale**: TODO
+**Rationale**: We will display an image montage for all the types of lesions, We will display the "mean" and "standard deviation" images and display the difference between an average of each lesion type.
 
 ## ML Business Case
 

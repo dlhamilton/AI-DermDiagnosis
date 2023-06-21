@@ -26,7 +26,11 @@ def page_summary_body():
         f"to support and improve the accuracy of diagnoses made by dermatologists.\n"
         f"* The images in this dataset represent seven different types of skin cancer, making it "
         f"a valuable resource for developing and evaluating machine learning models for multi-class "
-        f"skin lesion classification.\n\n"
+        f"skin lesion classification.\n\n")
+    st.error(
+        f"**MUST READ**. \n\n It's important to note that while the AI model can assist with initial screening and diagnosis,"
+        f" any prediction it makes must be verified by a healthcare professional to ensure accuracy and safety.")
+    st.warning(
         f"Utilizing this dataset to create a model for early detection can have a significant "
         f"impact on reducing mortality rates and improving the quality of life for patients affected by skin cancer."
         f"**The Way Forward: Inclusivity for Black Skin**\n"
@@ -48,7 +52,7 @@ def page_summary_body():
     
 
     st.success(
-        f"The project has 6 business requirements:\n"
+        f"The project has 7 business requirements:\n"
 
         f"* Business Requirement 1: - The client aims to visually differentiate lesions. The model should be "
         f"capable of reaching an accuracy of at least 70%. \n"
@@ -58,12 +62,15 @@ def page_summary_body():
         f"* Business Requirement 3 - If a skin lesion is predicted as malignant with high confidence, "
         f"the system should recommend immediate medical consultation. \n"
 
-        f"* Business Requirement 5 - The project will deliver a web application where users can upload a "
+        f"* Business Requirement 4 - The project will deliver a web application where users can upload a "
         f"skin lesion image, and the system will provide a diagnosis, a confidence level of the prediction \n"
 
-        f"* Business Requirement 6 - The AI model's insights should assist healthcare professionals "
+        f"* Business Requirement 5 - The AI model's insights should assist healthcare professionals "
         f"in making informed decisions about the treatment process. \n"
 
-        f"* Business Requirement 8 - The client is interested to have a study to visually differentiate between "
+        f"* Answer business requirement 6 - "
+        f"The model's performance will be evaluated using balanced performance metrics such as F1 Score aiming for scores above 0.7. \n"
+
+        f"* Business Requirement 7 - The client is interested to have a study to visually differentiate between "
         f"lesions. \n"
         )
