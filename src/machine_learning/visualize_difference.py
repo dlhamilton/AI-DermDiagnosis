@@ -9,12 +9,39 @@ import seaborn as sns
 
 
 def subset_image_label(X, y, label_to_display):
+    """
+    Subsets the images based on a specific label from the dataset.
+
+    Args:
+        X (np.ndarray): The input images.
+        y (np.ndarray): The corresponding labels.
+        label_to_display: The label to subset the images.
+
+    Returns:
+        np.ndarray: The subset of images with the specified label.
+
+    """
+
     y = y.reshape(-1, 1, 1)
     boolean_mask = np.any(y == label_to_display, axis=1).reshape(-1)
     df = X[boolean_mask]
     return df
 
 def plot_diff_bet_avg_image_labels(X, y, label_1, label_2):
+    """
+    Plots the difference between the average images of two specified labels.
+
+    Args:
+        X (np.ndarray): The input images.
+        y (np.ndarray): The corresponding labels.
+        label_1: The first label to compare.
+        label_2: The second label to compare.
+
+    Returns:
+        matplotlib.figure.Figure: The generated figure containing the plot.
+
+    """
+
     sns.set_style("white")
     
     # calculate mean from label1
