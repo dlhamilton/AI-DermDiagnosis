@@ -3,6 +3,17 @@ import matplotlib.pyplot as plt
 
 
 def page_summary_body():
+    """
+    Displays the body of the project summary page.
+
+    The page provides a quick summary of the project, including general information about skin cancer,
+    details about the project dataset (Skin Cancer MNIST: HAM10000), important considerations regarding the use
+    of the AI model for skin cancer detection, and the way forward in terms of inclusivity for black skin.
+    It also highlights the business requirements of the project.
+
+    Returns:
+        None
+    """
 
     st.write("### Quick Project Summary")
 
