@@ -14,12 +14,22 @@ import itertools
 import random
 
 def page_lesion_exploration_body():
+    """
+    Displays the body of the lesion exploration page.
+
+    The page provides visual exploration of different lesion classes, including information about each class,
+    differences between average and variability images, differences between average lesion types, differences between 
+    lesion colors, montage of lesion shapes, and image montage.
+
+    Returns:
+        None
+    """
+
     st.write("### Lesion Visualizer")
     st.info(
         f"* The client is interested in having a study that visually "
         f"differentiates between the lesion classes.")
     
-
     if st.checkbox("informaion about each lesion class"):
       
       st.write("#### Actinic keratoses and Intraepithelial Carcinoma / Bowen's disease (akiec)")
@@ -148,14 +158,25 @@ def page_lesion_exploration_body():
 
 
 def image_montage(dir_path, label_to_display, nrows, ncols, figsize=(15,10)):
+  """
+  Creates and displays an image montage from a directory of images.
+
+  Args:
+      dir_path (str): Path to the directory containing the images.
+      label_to_display (str): Label of the images to display in the montage.
+      nrows (int): Number of rows in the montage grid.
+      ncols (int): Number of columns in the montage grid.
+      figsize (tuple, optional): Figure size of the montage. Defaults to (15, 10).
+
+  Returns:
+      None
+  """
+
   sns.set_style("white")
   labels = os.listdir(dir_path)
 
-  # subset the class you are interested to display
   if label_to_display in labels:
 
-    # checks if your montage space is greater than subset size
-    # how many images in that folder
     images_list = os.listdir(dir_path+'/'+ label_to_display)
     if nrows * ncols < len(images_list):
       img_idx = random.sample(images_list, nrows * ncols)
@@ -166,14 +187,10 @@ def image_montage(dir_path, label_to_display, nrows, ncols, figsize=(15,10)):
           f"You requested a montage with {nrows * ncols} spaces")
       return
     
-
-    # create list of axes indices based on nrows and ncols
     list_rows= range(0,nrows)
     list_cols= range(0,ncols)
     plot_idx = list(itertools.product(list_rows,list_cols))
 
-
-    # create a Figure and display images
     fig, axes = plt.subplots(nrows=nrows,ncols=ncols, figsize=figsize)
     for x in range(0,nrows*ncols):
       img = mpimg.imread(dir_path + '/' + label_to_display + '/' + img_idx[x])
@@ -185,8 +202,6 @@ def image_montage(dir_path, label_to_display, nrows, ncols, figsize=(15,10)):
     plt.tight_layout()
     
     st.pyplot(fig=fig)
-    # plt.show()
-
 
   else:
     print("The label you selected doesn't exist.")
