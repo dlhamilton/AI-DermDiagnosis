@@ -167,21 +167,27 @@ This solution aims to augment the decision-making process for dermatologists and
 
 ### Hypothesis 1
 
-A clustering algorithm can identify patterns and characteristics commonly associated with benign or malignant conditions, providing an additional layer of information and insights.
+Providing a confidence level for each prediction would allow users to gauge the urgency of a medical consultation. For example: telling someone that there is a 70% chance the lesion could be cancerous would get them to check the lesion sooner. 
 
-**Validation Approach**: After applying the clustering algorithm on the dataset, review the clusters' properties manually. If clusters show distinct characteristics aligning with benign or malignant classes, the hypothesis is validated.
+**Validation Approach**: The validation approach involves analyzing user feedback and statistical analysis to determine if the provision of confidence levels influenced users' decisions for medical consultations. The findings from the analysis and studies will provide insights into whether the hypothesis holds true.
+
+**Result**: More time will be needed to see if the confidence level is getting people to go and see consultants sooner. the feedback section in the app and speaking to consultans to see if there has been a increase of people getting lesions checked. 
 
 ### Hypothesis 2
 
-Providing a confidence level for each prediction would allow users to gauge the urgency of a medical consultation.
+An Image Montage shows that typically a malignant lesion has a darker colour and a solid shape. Average Image, Variability Image and Difference between Averages studies did reveal a clear difference with malignant lesions.
 
-**Validation Approach**: Collect user feedback or conduct user testing to determine whether the confidence level helps users make informed decisions about seeking medical advice. High user satisfaction and increased rate of medical consultations following high-confidence malignant predictions would validate this hypothesis.
+**Validation Approach**: The validation approach involves a combination of visual analysis, expert opinions, and statistical analysis to validate the observed differences in color and shape between malignant and non-malignant lesions. The involvement of domain experts and the collection of additional data contribute to the validation process.
+
+**Result**: The compansion on the app showed this to be true and that a dark lesion is more likely to be dangerous. Average Image, Variability Image and Difference between Averages studies did reveal a clear difference with malignant lesions.
 
 ### Hypothesis 3
 
 An AI-powered web application will expedite the skin cancer diagnosis process, leading to early detection and better survival rates.
 
 **Validation Approach**: Monitor the usage metrics of the web application, including the number of unique users, number of images uploaded, and time to consultation after receiving a prediction. Additionally, conduct surveys or interviews with healthcare professionals to determine if they've seen improvements in the early detection and treatment of skin cancers. Positive feedback and statistics would validate this hypothesis.
+
+**Result**: The use of the app has increased. More time will be needed to see if the early dectection is improving treatment and increasing the survival rate. 
 
 ---
 
