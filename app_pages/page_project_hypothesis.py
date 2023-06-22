@@ -3,6 +3,17 @@ import matplotlib.pyplot as plt
 
 
 def page_project_hypothesis_body():
+    """
+    Displays the body of the project hypothesis and validation page.
+
+    The page presents the project hypothesis and its potential impact on skin cancer diagnosis and treatment.
+    It also highlights the studies conducted to validate the hypothesis and provides an overview of the AI-powered
+    web application's role in expediting the diagnosis process.
+
+    Returns:
+        None
+    """
+    
     st.write("### Project Hypothesis and Validation")
 
     st.success(
