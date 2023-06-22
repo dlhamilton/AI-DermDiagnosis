@@ -235,43 +235,61 @@ Overall, these iterations demonstrate a comprehensive exploration of techniques 
 
 - **Business Requirement 1**: The client aims to visually differentiate lesions. The model should be capable of reaching an accuracy of at least 70%.
 
-**Rationale**: This maps to a binary classification machine learning task, with 'benign' and 'malignant' as the target categories. Training this model will require labeled data, i.e., skin lesion images diagnosed as either benign or malignant. Data visualisation tasks like distribution plots can reveal the class balance, while performance metrics such as confusion matrix and ROC curve can be visualised to evaluate the model's performance.
+**Rationale**: 
+- We will display the "mean" and "standard deviation" images for each lesion type.
+- We will display the difference between each classes average image.
+- We will display an image montage for each lesion class.
 
 ### Business Requirement 2
 
 - **Business Requirement 2**: The model should provide a confidence level for each prediction.
 
-**Rationale**: This requirement links directly to the model's output interpretation. Most classification models can offer a probability or confidence score along with the class prediction. Understanding the distribution of these confidence scores can be achieved via data visualisations like histograms or density plots.
+**Rationale**: 
+- This requirement links directly to the model's output interpretation. Most classification models can offer a probability or confidence score along with the class prediction. 
+- Understanding the distribution of these confidence scores can be achieved via data visualisations like histograms or density plots.
 
 ### Business Requirement 3
 
 - **Business Requirement 3**: If a skin lesion is predicted as malignant with high confidence, the system should recommend immediate medical consultation.
 
-**Rationale**: This requirement involves the application of a decision rule on the model's output. It doesn't directly correspond to a specific ML task or data visualisation, but its effectiveness can be validated through techniques like Precision-Recall, which offer a trade-off visualisation between recall (sensitivity) and precision for different threshold settings.
+**Rationale**: 
+- This requirement involves the application of a decision rule on the model's output. It doesn't directly correspond to a specific ML task or data visualisation,
+- its effectiveness can be validated through techniques like Precision-Recall, which offer a trade-off visualisation between recall (sensitivity) and precision for different threshold settings.
 
 ### Business Requirement 4
 
 - **Business Requirement 4**: The project will deliver a web application where users can upload a skin lesion image, and the system will provide a diagnosis, a confidence level of the prediction.
 
-**Rationale**: While not a direct ML task, this requirement relates to deploying the model within a user-accessible application. Displaying the model's results, including the diagnosis, associated confidence level, and cluster information, necessitates the application of data visualisations in a user-friendly interface.
+**Rationale**: 
+- While not a direct ML task, this requirement relates to deploying the model within a user-accessible application.
+- Displaying the model's results, including the diagnosis, associated confidence level.
+- Show the data visualisations in a user-friendly interface.
 
 ### Business Requirement 5
 
 - **Business Requirement 5**: The AI model's insights should assist healthcare professionals in making informed decisions about the treatment process.
 
-**Rationale**: This requirement pertains to the application of the ML model's results in a real-world healthcare context. Clear and comprehensible data visualisations are crucial for this requirement. show the confidence levels, for each lesion type that can aid healthcare professionals.
+**Rationale**: 
+- This requirement pertains to the application of the ML model's results in a real-world healthcare context. 
+- Clear and comprehensible data visualisations are crucial for this requirement.
+- Show the confidence levels, for each lesion type that can aid healthcare professionals.
 
 ### Business Requirement 6
 
 - **Business Requirement 6**: The model's performance will be evaluated using balanced performance metrics such as F1 Score aiming for scores above 0.7.
 
-**Rationale**: These performance metrics are integral to assess the model's performance in a balanced manner, especially in the case of imbalanced datasets. Precision-Recall  provide visualisations to comprehend the performance of the model at various threshold settings. Additionally, the F1 Score is a harmonic mean of precision and recall, providing a singular metric that balances both these important measures.
+**Rationale**: 
+- These performance metrics are integral to assess the model's performance in a balanced manner, especially in the case of imbalanced datasets. 
+- Precision-Recall  provide visualisations to comprehend the performance of the model at various threshold settings. 
+- The F1 Score is a harmonic mean of precision and recall, providing a singular metric that balances both these important measures.
 
 ### Business Requirement 7
 
 - **Business Requirement 7**: The client is interested to have a study to visually differentiate between lesions.
 
-**Rationale**: We will display an image montage for all the types of lesions, We will display the "mean" and "standard deviation" images and display the difference between an average of each lesion type.
+**Rationale**: 
+- We will display an image montage for all the types of lesions, 
+- We will display the "mean" and "standard deviation" images and display the difference between an average of each lesion type.
 
 ---
 
