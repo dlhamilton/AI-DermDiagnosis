@@ -1,52 +1,29 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+![Banner](readme_images/banner.png)
 
-## Codeanywhere Template Instructions
+## Table of Contents
 
-Welcome,
+1. [User Stories](#user-stories)
+2. [Epics](#epics)
+3. [Dataset Content](#dataset-content)
+4. [Business Requirements](#business-requirements)
+5. [Hypothesis and validation](#hypothesis-and-how-to-validate)
+6. [The model](#the-model)
+7. [Implementation of the Business Requirements](#the-rationale-to-map-the-business-requirements-to-the-data-visualizations-and-ml-tasks)
+8. [ML Business case](#ml-business-case)
+9. [Dashboard design](#dashboard-design)
+10. [Bugs](#bugs)
+11. [CRISP DM Process](#crisp-dm-process)
+12. [Bugs](#bugs)
+13. [Deployment](#deployment)
+14. [Data Analysis and Machine Learning Libraries](#data-analysis-and-machine-learning-libraries)
+15. [Credits](#credits)
+16. [Acknowledgements](#Acknowledgements)
 
-This is the Code Institute student template for Codeanywhere. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions. Click the `Use this template` button above to get started.
+---
 
-You can safely delete the Gitpod Template Instructions section of this README.md file,  and modify the remaining paragraphs for your own project. Please do read the Gitpod Template Instructions at least once, though! It contains some important information about Gitpod and the extensions we use.
+### Deployed version at [AI-DermDiagnosis](https://ai-dermdiagnosis-75d8dba881ea.herokuapp.com/)
 
-## How to use this repo
-
-1. Use this template to create your GitHub project repo
-
-1. Log into <a href="https://app.codeanywhere.com/" target="_blank" rel="noreferrer">CodeAnywhere</a> with your GitHub account.
-
-1. On your Dashboard, click on the New Workspace button
-
-1. Paste in the URL you copied from GitHub earlier
-
-1. Click Create
-
-1. Wait for the workspace to open. This can take a few minutes.
-
-1. Open a new terminal and <code>pip3 install -r requirements.txt</code>
-
-1. In the terminal type <code>pip3 install jupyter</code>
-
-1. In the terminal type <code>jupyter notebook --NotebookApp.token='' --NotebookApp.password=''</code> to start the jupyter server.
-
-1. Open port 8888 preview or browser
-
-1. Open the jupyter_notebooks directory in the jupyter webpage that has opened and click on the notebook you want to open.
-
-1. Click the button Not Trusted and choose Trust.
-
-Note that the kernel says Python 3. It inherits from the workspace so it will be Python-3.8.12 as installed by our template. To confirm this you can use <code>! python --version</code> in a notebook code cell.
-
-## Gitpod Reminders
-
-To log into the Heroku toolbelt CLI:
-
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
-
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with *Regenerate API Key*.
+---
 
 ## User Stories
 
@@ -73,6 +50,8 @@ You can now use the `heroku` CLI program - try running `heroku apps` to confirm 
 
 - [#9](https://github.com/dlhamilton/AI-DermDiagnosis/issues/9) As a user, I won't have the ability to use the app for definitive medical diagnosis, as the app serves to provide an additional layer of information and should not replace professional medical advice.
 - [#10](https://github.com/dlhamilton/AI-DermDiagnosis/issues/10) As a data scientist, I won't develop a feature for users to track changes in their skin lesions over time within the app, as it falls outside the scope of the current project.
+
+---
 
 ## Epics
 
@@ -123,6 +102,8 @@ You can now use the `heroku` CLI program - try running `heroku apps` to confirm 
 - As a user, I won't have the ability to use the app for definitive medical diagnosis, as the app serves to provide an additional layer of information and should not replace professional medical advice.
 - As a data scientist, I won't develop a feature for users to track changes in their skin lesions over time within the app, as it falls outside the scope of the current project.
 
+---
+
 ## Dataset Content
 
 - The dataset is sourced from [Kaggle](https://www.kaggle.com/datasets/kmader/skin-cancer-mnist-ham10000). We then created a fictitious user story where predictive analytics can be applied in a real project in the workplace.
@@ -152,6 +133,8 @@ You can now use the `heroku` CLI program - try running `heroku apps` to confirm 
 
 In all cases, regardless of the diagnostic method, a prediction by the AI should be considered as a suggestion or an additional tool for skin cancer screening, not a definitive diagnosis. A healthcare professional should always be consulted for accurate diagnosis and treatment recommendations.
 
+---
+
 ## Business Requirements
 
 - AI-Derm is a healthcare startup that uses artificial intelligence for dermatological diagnoses. It is spearheading a project to develop an AI-powered application that can help healthcare professionals and individuals identify skin cancer at an early stage. The primary aim is to distinguish malignant skin lesions from benign ones, providing an immediate diagnosis and confidence level, which would recommend further medical consultation if necessary.
@@ -178,7 +161,9 @@ In all cases, regardless of the diagnostic method, a prediction by the AI should
 
 This solution aims to augment the decision-making process for dermatologists and bring about a transformative change in the early detection and treatment of skin cancer.
 
-## Hypothesis and how to validate?
+---
+
+## Hypothesis and how to validate
 
 ### Hypothesis 1
 
@@ -197,6 +182,13 @@ Providing a confidence level for each prediction would allow users to gauge the 
 An AI-powered web application will expedite the skin cancer diagnosis process, leading to early detection and better survival rates.
 
 **Validation Approach**: Monitor the usage metrics of the web application, including the number of unique users, number of images uploaded, and time to consultation after receiving a prediction. Additionally, conduct surveys or interviews with healthcare professionals to determine if they've seen improvements in the early detection and treatment of skin cancers. Positive feedback and statistics would validate this hypothesis.
+
+---
+
+## The Model
+TODO
+
+---
 
 ## The rationale to map the business requirements to the Data Visualisations and ML tasks
 
@@ -241,6 +233,8 @@ An AI-powered web application will expedite the skin cancer diagnosis process, l
 - **Business Requirement 7**: The client is interested to have a study to visually differentiate between lesions.
 
 **Rationale**: We will display an image montage for all the types of lesions, We will display the "mean" and "standard deviation" images and display the difference between an average of each lesion type.
+
+---
 
 ## ML Business Case
 
@@ -311,6 +305,8 @@ Model Interpretability: Even though more complex models like deep learning might
 
 Data Privacy: Given the sensitive nature of medical images, ensure all data is handled in compliance with relevant privacy laws and regulations. Images should be anonymised, and any personally identifiable information should be removed.
 
+---
+
 ## Dashboard Design
 
 - List all dashboard pages and their content, either blocks of information or widgets, like buttons, checkboxes, images, or any other item that your dashboard library supports.
@@ -359,9 +355,18 @@ Data Privacy: Given the sensitive nature of medical images, ensure all data is h
 - Reporting Mechanism: A separate form or section where users can report technical issues or other problems with the system.
 - Future Features: A text block outlining upcoming features or improvements planned for the system.
 
-## Unfixed Bugs
+---
+
+## Bugs
 
 - You will need to mention unfixed bugs and why they were not fixed. This section should include shortcomings of the frameworks or technologies used. Although time can be a significant variable to consider, paucity of time and difficulty understanding implementation is not a valid reason to leave bugs unfixed.
+
+---
+
+## CRISP DM Process
+TODO
+
+---
 
 ## Deployment
 
@@ -378,9 +383,13 @@ Data Privacy: Given the sensitive nature of medical images, ensure all data is h
 5. The deployment process should happen smoothly if all deployment files are fully functional. Click now the button Open App on the top of the page to access your App.
 6. If the slug size is too large then add large files not required for the app to the .slugignore file.
 
-## Main Data Analysis and Machine Learning Libraries
+---
+
+## Data Analysis and Machine Learning Libraries
 
 - Here you should list the libraries you used in the project and provide an example(s) of how you used these libraries.
+
+---
 
 ## Credits
 
@@ -398,6 +407,8 @@ Data Privacy: Given the sensitive nature of medical images, ensure all data is h
 - The photos used on the home and sign-up page are from This Open-Source site
 - The images used for the gallery page were taken from this other open-source site
 
-## Acknowledgements (optional)
+---
+
+## Acknowledgements
 
 - Thank the people that provided support through this project.
