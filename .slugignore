@@ -1,4 +1,4 @@
-<!-- # Exclude test files and directories
+# Exclude test files and directories
 tests/
 **/*.test.py
 
@@ -32,4 +32,10 @@ build/
 *.vscode/
 .idea/
 *.vim
-*.tmux -->
+*.tmux
+
+
+README.md
+.gitpod.dockerfile
+.gitpod.yml
+app_pages/__pycache__/*
