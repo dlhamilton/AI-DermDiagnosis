@@ -1,6 +1,17 @@
 import streamlit as st
 
 def page_reporting():
+    """
+    Displays the feedback and reporting page of the application.
+
+    The page includes a user feedback form for rating the experience and leaving comments, a reporting mechanism
+    for describing technical issues or problems with the system, and a section for showcasing future features
+    that are currently being worked on.
+
+    Returns:
+        None
+    """
+    
     # Title of the app
     st.title("Feedback / Reporting Page")
     
