@@ -3,7 +3,6 @@ from PIL import Image
 import numpy as np
 import pandas as pd
 
-from src.data_management import download_dataframe_as_csv
 from src.machine_learning.predictive_analysis import (
                                                     load_model_and_predict,
                                                     resize_input_image,
@@ -11,6 +10,16 @@ from src.machine_learning.predictive_analysis import (
                                                     )
 
 def page_lesion_classifier_body():
+    """
+    Displays the body of the lesion classifier page.
+
+    The page provides information about classifying skin lesions and allows users to upload skin lesion images for live prediction.
+    It also displays analysis reports for the uploaded images.
+
+    Returns:
+        None
+    """
+
     st.info(
         f"* The client is interested in telling what class a lesion is part of."
         )
@@ -22,9 +31,9 @@ def page_lesion_classifier_body():
 
     st.write("---")
 
-    image_shape = (75, 75)  # Example: (75, 75)
+    image_shape = (75, 75)
     model_path = 'outputs/modelling_evaluation_v5/lesion_classifier_model.h5'
-    class_names = ['akiec', 'bcc', 'bkl', 'df', 'mel', 'nv', 'vasc']  # Example class names
+    class_names = ['akiec', 'bcc', 'bkl', 'df', 'mel', 'nv', 'vasc']
 
     images_buffer = st.file_uploader('Upload skin lesion images. You may select more than one.',
                                     type=['png', 'jpeg', 'jpg'], accept_multiple_files=True)
