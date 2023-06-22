@@ -7,6 +7,19 @@ import joblib
 
 
 def download_dataframe_as_csv(df):
+    """
+    Generates a download link for a Pandas DataFrame as a CSV file.
+
+    Args:
+        df (pd.DataFrame): The DataFrame to be downloaded.
+
+    Returns:
+        str: The HTML code for the download link.
+
+    Example:
+        df = pd.DataFrame(...)
+        download_link = download_dataframe_as_csv(df)
+    """
 
     datetime_now = datetime.now().strftime("%d%b%Y_%Hh%Mmin%Ss")
     csv = df.to_csv().encode()
@@ -19,4 +32,16 @@ def download_dataframe_as_csv(df):
 
 
 def load_pkl_file(file_path):
+    """
+    Loads a Pickle file (.pkl) from the specified path.
+
+    Args:
+        file_path (str): The path to the Pickle file.
+
+    Returns:
+        obj: The object loaded from the Pickle file.
+
+    Example:
+        model = load_pkl_file('model.pkl')
+    """
     return joblib.load(filename=file_path)
