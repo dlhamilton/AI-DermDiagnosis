@@ -192,7 +192,40 @@ An AI-powered web application will expedite the skin cancer diagnosis process, l
 ---
 
 ## The Model
-TODO
+The model has 1 input layer, Multiple Convolutional and Pooling Layers in the base model (Xception), 1 Flatten Layer, 1 Dense Layer, 1 Output Layer.
+
+Base Model: The base model is initialized using the Xception architecture. Xception is a deep convolutional neural network (CNN) model that has shown excellent performance on image classification tasks. It is pre-trained on the ImageNet dataset, which provides a strong foundation for feature extraction.
+
+Trainable Layers: By default, all layers in the Xception base model are set to be trainable. This means that during the training process, the weights of these layers will be updated based on the data specific to the skin lesion classification task.
+
+Sequential Model: The Sequential model is initialized to build the classification model on top of the base model.
+
+Flatten Layer: The Flatten layer is added to convert the multi-dimensional output of the base model into a one-dimensional feature vector, which can be input to the following dense layers.
+
+Dense Layers: Two dense layers are added after the Flatten layer to learn high-level representations from the extracted features.
+
+Dropout Layer: The Dropout layer with a dropout rate of 0.5 is added to mitigate overfitting. It randomly sets a fraction of input units to 0 during training, which helps prevent the model from relying too much on specific features.
+
+Batch Normalization Layer: The Batch Normalization layer is added to normalize the activations of the previous layer, which helps stabilize and speed up the training process.
+
+Activation Function: The ReLU (Rectified Linear Unit) activation function is chosen as the activation function for the dense layers. ReLU is commonly used in deep learning models as it introduces non-linearity and helps the model learn complex patterns.
+
+Output Layer: The output layer consists of a Dense layer with a number of units equal to the number of classes (num_classes) in the skin lesion classification task. The model uses a softmax activation function to output the predicted probabilities for each class.
+
+Loss Function: The model is compiled with the SparseCategoricalCrossentropy loss function, which is suitable for multi-class classification problems. It computes the cross-entropy loss between the true labels and the predicted probabilities.
+
+Optimizer: The Adam optimizer is chosen as the optimizer for training the model. Adam is an adaptive learning rate optimization algorithm that combines the benefits of the RMSprop and AdaGrad algorithms. It helps accelerate the training process and converges to a good solution efficiently.
+
+Metrics: The model is evaluated using the accuracy metric, which calculates the proportion of correctly classified samples during training and evaluation.
+
+### Trial and Error
+In addition to the current iteration, there were four previous iterations of the model, each documented in separate notebooks. These iterations employed different techniques to address the challenges of imbalanced data, including SMOTE upsampling, downsampling, and the use of different models.
+
+The purpose of these iterations was to explore various approaches and evaluate their effectiveness in improving the model's performance. Each iteration represents a unique attempt to tackle the imbalanced data issue and enhance the model's ability to accurately classify skin lesions.
+
+By employing techniques such as SMOTE upsampling and downsampling, the previous iterations aimed to address the class imbalance problem by either generating synthetic samples or reducing the number of majority class samples. These techniques were used in conjunction with different models to examine their impact on model performance.
+
+Overall, these iterations demonstrate a comprehensive exploration of techniques and models, reflecting a deep understanding of the challenges posed by imbalanced data and a systematic approach to finding effective solutions.
 
 ---
 
