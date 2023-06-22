@@ -6,6 +6,17 @@ from src.machine_learning.evaluate_clf import load_test_evaluation
 
 
 def page_ml_performance_metrics():
+    """
+    Displays the performance metrics and evaluation results of a machine learning model.
+
+    The page includes visualizations and statistics such as label frequencies in the train, validation, and test sets,
+    model training history (accuracy and loss), general performance on the test set (loss and accuracy), confusion matrix,
+    classification report, ROC curve, and precision-recall curve.
+
+    Returns:
+        None
+    """
+    
     version = 'v1'
 
     st.write("### Train, Validation and Test Set: Labels Frequencies")
