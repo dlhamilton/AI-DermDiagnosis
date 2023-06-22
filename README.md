@@ -306,7 +306,7 @@ Train data - target: type class; features: all images
 
 - What is the business objective requiring a ML solution?
 
-The business objective is to develop an AI-powered application that assists in the early identification of skin cancer. The AI model will differentiate between malignant and benign skin lesions based on images, thereby providing a rapid diagnosis and recommending further medical consultation when necessary.
+The business objective is to develop an AI-powered application that assists in the early identification of skin cancer. The AI model will differentiate between different typesof lesions based on images, thereby providing a rapid diagnosis and recommending further medical consultation when necessary.
 
 - Can traditional data analysis be used?
 
@@ -330,7 +330,7 @@ Yes, this project does have ethical and privacy concerns. It's crucial to ensure
 
 - What level of prediction performance is needed?
 
-Given the serious implications of false negatives (missing a malignant lesion) and false positives (misidentifying a benign lesion as malignant), a high level of prediction performance is needed. The model should strive for high sensitivity (minimising false negatives) at ideally over 90% and specificity (minimising false positives) above 85%.
+Given the serious implications of false negatives (missing a malignant lesion) and false positives (misidentifying a benign lesion as malignant), a high level of prediction performance is needed. The model should strive for high sensitivity (minimising false negatives) at ideally over 70% and specificity (minimising false positives) above 70%.
 
 - What are the project input and intended outputs?
 
