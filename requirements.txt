@@ -7,8 +7,8 @@ seaborn==0.11.0
 scikit-learn==0.24.2
 
 
-protobuf==3.20
-tensorflow
+protobuf==3.20.3
+
 ipykernel==6.23.0
 Jinja2==3.1.2
 joblib==1.2.0
