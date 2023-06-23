@@ -424,12 +424,16 @@ Note: Each checkbox option can be independently selected or deselected to contro
 
 **Business Requirement 1**: The client aims to visually differentiate lesions. The model should be capable of reaching an accuracy of at least 70%.
 - Solution: The model has an accuracy of 80%. shown below.
+![Business Requirement 1 Eval.](readme_images/BR1.png)
 
 **Business Requirement 2**: The model should provide a confidence level for each prediction.
 - Solution: When you upload an image a confidence level is given to the user. Shown below.
+![Business Requirement 2 Eval.](readme_images/BR2.png)
 
 **Business Requirement 3**: If a skin lesion is predicted as malignant with high confidence, the system should recommend immediate medical consultation.
 - Solution: If the model predicts a dangerous lesion it will give a message and it will still advise a check up and verification if it is another kind of lesion. Examples are shown below.
+![Business Requirement 3A Eval.](readme_images/BR3A.png)
+![Business Requirement 3B Eval.](readme_images/BR3B.png)
 
 **Business Requirement 4**: The project will deliver a web application where users can upload a skin lesion image, and the system will provide a diagnosis, a confidence level of the prediction.
 - Solution: The application can be found here.
@@ -437,13 +441,15 @@ Deployed version at [AI-DermDiagnosis](https://ai-dermdiagnosis-75d8dba881ea.her
 
 **Business Requirement 5**: The AI model's insights should assist healthcare professionals in making informed decisions about the treatment process.
 - Solution: The application has the classifier to help pedict and also has images to see visual differences. 
+![Business Requirement 5 Eval.](readme_images/BR5.png)
 
-**Business Requirement 6**: The model's performance will be evaluated using balanced performance metrics such as F1 Score aiming for scores above 0.7.
-- Solution: The application has the classifier to help pedict and also has images to see visual differences. 
+**Business Requirement 6**: The model's performance will be evaluated using balanced performance metrics such as F1 Score.
+- Solution: The application has the scores for the model below.
+![Business Requirement 6 Eval.](readme_images/BR1.png) 
 
 **Business Requirement 7**: The client is interested to have a study to visually differentiate between lesions.
 - Solution: The application has images to see visual differences. Example is shown below.
-
+![Business Requirement 7 Eval.](readme_images/BR7.png) 
 ---
 
 ## CRISP DM Process
