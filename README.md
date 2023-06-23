@@ -13,11 +13,12 @@
 9. [Dashboard design](#dashboard-design)
 10. [Business Requirements Evaluation](#requirements-evaluation)
 11. [CRISP DM Process](#crisp-dm-process)
-12. [Bugs](#bugs)
-13. [Deployment](#deployment)
-14. [Data Analysis and Machine Learning Libraries](#data-analysis-and-machine-learning-libraries)
-15. [Credits](#credits)
-16. [Acknowledgements](#Acknowledgements)
+12. [Improvements and Future Plans](#improvements-and-future-plans)
+13. [Bugs](#bugs)
+14. [Deployment](#deployment)
+15. [Data Analysis and Machine Learning Libraries](#data-analysis-and-machine-learning-libraries)
+16. [Credits](#credits)
+17. [Acknowledgements](#Acknowledgements)
 
 ---
 
@@ -449,7 +450,8 @@ Deployed version at [AI-DermDiagnosis](https://ai-dermdiagnosis-75d8dba881ea.her
 
 **Business Requirement 7**: The client is interested to have a study to visually differentiate between lesions.
 - Solution: The application has images to see visual differences. Example is shown below.
-![Business Requirement 7 Eval.](readme_images/BR7.png) 
+![Business Requirement 7 Eval.](readme_images/BR7.png)
+
 ---
 
 ## CRISP DM Process
@@ -490,6 +492,10 @@ As a process model, CRISP-DM provides an overview of the data mining life cycle.
 - Maintain and update the system: Regularly update the model, address software bugs, and incorporate new features or data sources as needed.
 
 By following the CRISP-DM methodology, and using the tools on GitHub can achieve a systematic and structured approach to developing a skin lesion classification and visualization system, ensuring alignment with business objectives and delivering a robust and effective solution.
+
+---
+
+## Improvements and Future Plans
 
 ---
 
