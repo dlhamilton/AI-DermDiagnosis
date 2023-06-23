@@ -11,7 +11,7 @@
 7. [Implementation of the Business Requirements](#the-rationale-to-map-the-business-requirements-to-the-data-visualizations-and-ml-tasks)
 8. [ML Business case](#ml-business-case)
 9. [Dashboard design](#dashboard-design)
-10. [Bugs](#bugs)
+10. [Business Requirements Evaluation](#requirements-evaluation)
 11. [CRISP DM Process](#crisp-dm-process)
 12. [Bugs](#bugs)
 13. [Deployment](#deployment)
@@ -375,30 +375,36 @@ Data Privacy: Given the sensitive nature of medical images, ensure all data is h
 **Project Summary** - This page provides an overall summary of the project. Showing the outline of the system, information about the data set, the business requirments and a link to this read me.
 
 - Project Description: Brief text block summarizing the project, the goals, and the proposed AI solution.
-- System Outline: Visual schematic or flow diagram of the overall system architecture.
+- Warning: Explaining he importance of seeing a medical profession for a check up. 
+- System Outline:The overall system architecture.
 - Data Set Information: Summary statistics, metadata, and other relevant details about the data set being used.
 - Business Requirements: A concise list of the business requirements guiding the project.
 - Read Me Link: A clickable button or hyperlink leading to a more detailed project documentation.
 
-**Lesion Exploration / Clusters Page** -  This page offers visualisations of the data clusters identified in the skin lesion images. It can display a scatter plot or other visualization of the clusters and give details about the characteristics associated with each cluster.
+**Lesion Exploration** - This page provides a overview of the lesions so you can see the differances.
 
-- Data Clusters Visualization: A scatter plot or similar visualization showing the different data clusters in the skin lesion images.
-- Cluster Details: Text blocks or interactive tooltips providing additional information about each cluster, such as common characteristics or typical images.
-- Cluster Navigation: Dropdown menu or similar widget to select and explore individual clusters in detail.
+- Lesion Visualizer: A section that provides an overview of the lesion exploration functionality.
+- Information about Each Lesion Class: A checkbox option to display information about each lesion class, including descriptions and characteristics of different types of skin lesions.
+- Difference between Average and Variability Images: A checkbox option to visualize the differences between average and variability images for different lesion classes.
+- Differences between Average Lesion Types: A checkbox option to compare the average images of two selected lesion types and visualize the differences.
+- Differences between Lesion Colors: A checkbox option to compare the color distributions of two selected lesion types and visualize any differences.
+- Montage of Lesion Shapes: A checkbox option to display a montage of lesion shapes, showcasing the distinct shapes associated with different lesion types.
+- Image Montage: A checkbox option to create and display an image montage of a selected lesion type from the dataset.
+- Create Montage Button: A button that generates a new image montage based on the selected lesion type.
+- Image Montage Display: The generated image montage displayed on the page.
 
-**Upload page and Results** - This page allows users (either individuals or healthcare professionals) to upload a skin lesion image for diagnosis. After the image is processed, the diagnosis, confidence level, associated cluster will be displayed and an explanation of what the cluster means.
+Note: Each checkbox option can be independently selected or deselected to control the visibility of the corresponding visualization on the page.
+
+**Upload page and Results** - This page allows users (either individuals or healthcare professionals) to upload a skin lesion image for diagnosis. After the image is processed, the diagnosis and confidence level.
 
 - Image Upload Interface: A form or button allowing users to upload skin lesion images for analysis.
 - Diagnosis Display: A text block or similar element showing the diagnosis once the image has been processed.
 - Confidence Level Display: A bar chart, gauge, or similar visualization showing the confidence level associated with the diagnosis.
-- Cluster Association: A text block indicating which cluster the image belongs to and what it implies.
 
 **Project Hypothesis and Validation** - This page contains information related to the initial assumptions or hypotheses made about the project, and how those hypotheses are being validated or have been validated.
 
 - Hypotheses List: A bulleted or numbered list of the initial project hypotheses.
 - Validation Approach: A text block explaining how each hypothesis is or will be validated.
-- Validation Results: Charts, graphs, or other visualizations showing the results of the validation process.
-- Conclusions and Next Steps: A text block summarizing the validation results and outlining recommended next steps.
 
 **ML Performance Page** - This page presents detailed metrics on the performance of the AI model. It might include confusion matrix, ROC curve, precision-recall curve, F1 score, AUC-ROC value, etc. It can also include a comparison of performance metrics over different versions of the model.
 
@@ -414,14 +420,18 @@ Data Privacy: Given the sensitive nature of medical images, ensure all data is h
 
 ---
 
-## Bugs
-
-- You will need to mention unfixed bugs and why they were not fixed. This section should include shortcomings of the frameworks or technologies used. Although time can be a significant variable to consider, paucity of time and difficulty understanding implementation is not a valid reason to leave bugs unfixed.
+## Requirements Evaluation
 
 ---
 
 ## CRISP DM Process
 TODO
+
+---
+
+## Bugs
+
+- You will need to mention unfixed bugs and why they were not fixed. This section should include shortcomings of the frameworks or technologies used. Although time can be a significant variable to consider, paucity of time and difficulty understanding implementation is not a valid reason to leave bugs unfixed.
 
 ---
 
