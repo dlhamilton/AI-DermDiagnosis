@@ -51,7 +51,23 @@ def page_lesion_classifier_body():
             pred_proba, pred_class = load_model_and_predict(resized_img, model_path, class_names)
             plot_predictions_probabilities(pred_proba, pred_class, class_names)
             
-            df_report = df_report.append({"Name": image_buffer.name, 'Result': pred_class}, ignore_index=True)
+            descriptions = {
+                "akiec": "Actinic keratoses and Intraepithelial Carcinoma / Bowen's disease (akiec): These are precancerous or early forms of skin cancer that can become malignant if left untreated.",
+                "bcc": "Basal Cell Carcinoma (bcc): This is a type of skin cancer and is therefore malignant. It's one of the most common types of skin cancer.",
+                "bkl": "Benign keratosis-like lesions (Solar Lentigines / Seborrheic Keratoses and Lichen Planus-like Keratoses, bkl): These are typically benign and are not cancerous.",
+                "df": "Dermatofibroma (df): These are benign skin growths.",
+                "mel": "Melanoma (mel): This is a type of skin cancer and is therefore malignant. Melanoma is the most dangerous type of skin cancer.",
+                "nv": "Melanocytic Nevi (nv): These are commonly known as moles. They are typically benign but can become malignant, turning into melanoma.",
+                "vasc": "Vascular lesions (Angiomas, Angiokeratomas, Pyogenic Granulomas, and Hemorrhage, vasc): These are typically benign, but like all skin conditions, any changes should be monitored for potential malignancy."
+            }
+
+            df_report = df_report.append({"Name": image_buffer.name, "Result": pred_class, "Description": descriptions.get(pred_class, "")},
+                                         ignore_index=True)
+            
+            if pred_class in ["akiec", "bcc", "mel"]:
+                st.error("Warning: It is recommended to get checked by a healthcare professional.")
+            else:
+                st.warning("Warning: It is recommended to monitor this and get it verified by a healthcare professional.")
         
         if not df_report.empty:
             st.subheader("Analysis Report")
