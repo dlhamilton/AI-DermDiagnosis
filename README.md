@@ -155,7 +155,7 @@ In all cases, regardless of the diagnostic method, a prediction by the AI should
 
   - **Business Requirement 5**: The AI model's insights should assist healthcare professionals in making informed decisions about the treatment process.
 
-  - **Business Requirement 6**: The model's performance will be evaluated using balanced performance metrics such as F1 Score aiming for scores above 0.7.
+  - **Business Requirement 6**: The model's performance will be evaluated using balanced performance metrics such as F1 Score.
 
   - **Business Requirement 7**: The client is interested to have a study to visually differentiate between lesions.
 
@@ -276,7 +276,7 @@ Overall, these iterations demonstrate a comprehensive exploration of techniques 
 
 ### Business Requirement 6
 
-- **Business Requirement 6**: The model's performance will be evaluated using balanced performance metrics such as F1 Score aiming for scores above 0.7.
+- **Business Requirement 6**: The model's performance will be evaluated using balanced performance metrics such as F1 Score.
 
 **Rationale**: 
 - These performance metrics are integral to assess the model's performance in a balanced manner, especially in the case of imbalanced datasets. 

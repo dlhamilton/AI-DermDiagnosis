@@ -80,7 +80,7 @@ def page_summary_body():
         f"in making informed decisions about the treatment process. \n"
 
         f"* Answer business requirement 6 - "
-        f"The model's performance will be evaluated using balanced performance metrics such as F1 Score aiming for scores above 0.7. \n"
+        f"The model's performance will be evaluated using balanced performance metrics such as F1 Score. \n"
 
         f"* Business Requirement 7 - The client is interested to have a study to visually differentiate between "
         f"lesions. \n"
