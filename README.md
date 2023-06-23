@@ -421,7 +421,16 @@ Note: Each checkbox option can be independently selected or deselected to contro
 ---
 
 ## Requirements Evaluation
-todo 
+**Business Requirement 1**: The client aims to visually differentiate lesions. The model should be capable of reaching an accuracy of at least 70%.
+**Business Requirement 2**: The model should provide a confidence level for each prediction.
+**Business Requirement 3**: If a skin lesion is predicted as malignant with high confidence, the system should recommend immediate medical consultation.
+**Business Requirement 4**: The project will deliver a web application where users can upload a skin lesion image, and the system will provide a diagnosis, a confidence level of the prediction.
+**Business Requirement 5**: The AI model's insights should assist healthcare professionals in making informed decisions about the treatment process.
+**Business Requirement 6**: The model's performance will be evaluated using balanced performance metrics such as F1 Score aiming for scores above 0.7.
+**Business Requirement 7**: The client is interested to have a study to visually differentiate between lesions.
+
+TODO
+
 ---
 
 ## CRISP DM Process
