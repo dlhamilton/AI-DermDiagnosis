@@ -182,10 +182,12 @@ def image_montage(dir_path, label_to_display, nrows, ncols, figsize=(15,10)):
       img_idx = random.sample(images_list, nrows * ncols)
     else:
       print(
-          f"Decrease nrows or ncols to create your montage. \n"
+          f"Making the montage smaller. \n"
           f"There are {len(images_list)} in your subset. "
           f"You requested a montage with {nrows * ncols} spaces")
-      return
+      st.write(f"There are {len(images_list)} in the subset.")
+      nrows = 3
+      img_idx = random.sample(images_list, nrows * ncols)
     
     list_rows= range(0,nrows)
     list_cols= range(0,ncols)
