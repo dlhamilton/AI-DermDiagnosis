@@ -421,11 +421,47 @@ Note: Each checkbox option can be independently selected or deselected to contro
 ---
 
 ## Requirements Evaluation
-
+todo 
 ---
 
 ## CRISP DM Process
-TODO
+
+CRISP-DM, which stands for Cross-Industry Standard Process for Data Mining, is an industry-proven way to guide your data mining efforts.
+
+As a methodology, it includes descriptions of the typical phases of a project, the tasks involved with each phase, and an explanation of the relationships between these tasks.
+As a process model, CRISP-DM provides an overview of the data mining life cycle. Below are the steps that I took this project
+
+**1. Business Understanding**
+- Identify the business objectives: Develop a system for skin lesion classification and visualization to assist in early detection of skin cancer.
+- Define the project requirements: Build a machine learning model to classify different types of skin lesions and provide visual exploration capabilities.
+
+**2. Data Understanding**
+- Explore the available dataset: Analyze the Skin Cancer MNIST dataset, which contains dermatoscopic images of skin lesions annotated with diagnosis and metadata.
+- Assess data quality and completeness: Check for missing values, data imbalance, and evaluate the relevance of the dataset for achieving project goals.
+
+**3. Data Preparation**
+- Perform data preprocessing: Clean the dataset, handle missing values, and address any data quality issues.
+- Prepare the data for modeling: Split the dataset into training and validation sets, apply appropriate feature engineering techniques, and address class imbalance if necessary.
+
+**4. Modeling**
+- Design the machine learning model: Define the architecture and hyperparameters of the model, considering factors such as the number of layers, activation functions, and optimization algorithms.
+- Train the model: Fit the model to the training data and tune the hyperparameters to optimize performance.
+- Evaluate model performance: Measure the accuracy, precision, recall, and other relevant metrics to assess the model's performance on the validation set.
+
+**5. Evaluation**
+- Assess model effectiveness: Evaluate the model's ability to classify skin lesions accurately and visualize different lesion classes effectively.
+- Validate against business requirements: Compare the model's performance with the predefined business requirements, such as accuracy thresholds and visualization goals.
+
+**6. Deployment**
+- Implement the model in a web application: Create a user-friendly interface where users can upload skin lesion images and receive predictions and visualizations.
+- Deploy the application: Make the application accessible online, ensuring scalability, security, and robustness.
+
+**7. Monitoring and Maintenance**
+- Continuously monitor model performance: Track key metrics and evaluate the model's accuracy and visual exploration capabilities over time.
+- Collect user feedback: Gather user feedback and incorporate improvements based on user experiences and requirements.
+- Maintain and update the system: Regularly update the model, address software bugs, and incorporate new features or data sources as needed.
+
+By following the CRISP-DM methodology, and using the tools on GitHub can achieve a systematic and structured approach to developing a skin lesion classification and visualization system, ensuring alignment with business objectives and delivering a robust and effective solution.
 
 ---
 
