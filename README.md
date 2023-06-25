@@ -559,18 +559,57 @@ Compressed or optimized the large files to reduce their size. Alternatively, use
 
 ## Deployment
 
-### Heroku
+### Remote Deployment on Heroku
 
-- The App live link is: <https://YOUR_APP_NAME.herokuapp.com/>
-- Set the runtime.txt Python version to a [Heroku-20](https://devcenter.heroku.com/articles/python-support#supported-runtimes) stack currently supported version.
-- The project was deployed to Heroku using the following steps.
+- The App live link is: <https://ai-dermdiagnosis-75d8dba881ea.herokuapp.com/>
+- Set the runtime.txt Python version to a [Heroku-20](https://devcenter.heroku.com/articles/python-support#supported-runtimes) stack currently supported version. The project is currently 3.8.16
+- The project was deployed to Heroku using the following steps. These are the steps you can take to deploy the project yourself. 
 
-1. Log in to Heroku and create an App
-2. At the Deploy tab, select GitHub as the deployment method.
-3. Select your repository name and click Search. Once it is found, click Connect.
-4. Select the branch you want to deploy, then click Deploy Branch.
-5. The deployment process should happen smoothly if all deployment files are fully functional. Click now the button Open App on the top of the page to access your App.
-6. If the slug size is too large then add large files not required for the app to the .slugignore file.
+1. Create a requirements.txt file in your project directory:
+  - This file should list all the dependencies that your program needs in order to run. This can be found in the "Data Analysis and Machine Learning Libraries" section.
+
+2. Set the Python version in runtime.txt:
+  - Create a file named runtime.txt in your project directory and set the Python version to a Heroku-20 stack currently supported version (e.g., python-3.8.16).
+
+3. Push the recent changes to GitHub:
+  - Before you deploy, make sure that you have pushed the recent changes, including the requirements.txt and runtime.txt files, to your GitHub repository.
+
+4. Log in to your Heroku account and create a new app:
+  - Go to your Heroku account page and choose "CREATE NEW APP", give it a unique name, and select a geographical region.
+
+5. Add the Heroku Python buildpack:
+  - Go to the Settings tab of your Heroku app and under the Buildpacks section, click on "Add buildpack" and select heroku/python.
+
+6. Connect your Heroku app to your GitHub repository:
+  - Go to the Deploy tab of your Heroku app, choose GitHub as the deployment method, and click on the "Connect to GitHub" button.
+  - A new section will appear where you can search for your GitHub repository. Select your repository name and click "Search". Once it is found, click "Connect".
+
+7. Configure automatic deploys (optional):
+  - If you want Heroku to automatically deploy your app whenever you push to the selected branch, click the "Enable Automatic Deploys" button.
+
+8. Deploy your app:
+  - Select the branch you want to deploy, then click the "Deploy Branch" button under the Manual Deploy section.
+
+9. Monitor the build process:
+  - Wait for the logs to run while the dependencies are installed and the app is being built.
+
+10. Check that Heroku stack is version 20 (if applicable):
+  - if the heroku app has the wrong stack then you will need to change it
+  1. In Heroku click "account settings" unders the avatar menu on the heroku dashboard.
+  2. Scroll down to API Key section and click reveal. Copy the key.
+  3. Back in your terminal enter the command ``` heroku login -i```
+  4. Enter your email address when prompted.
+  5. paste in your API Key for the password. 
+  6. Then use the command ``` heroku stack:set heroku-20 -a YOUR_APP_NAME ``` (replace YOUR_APP_NAME with the name of your app).
+
+11. Check if the slug size is too large (if applicable):
+  - If the slug size is too large, add large files that are not required for the app to run to the .slugignore file, and then redeploy.
+
+12. Access your deployed app:
+  - Once the build process is complete, you can access your app through a link similar to https://your-app-name.herokuapp.com/. There will also be an "Open App" button at the top of the Heroku dashboard.
+
+13. Note your app's live link:
+  - Your app is now live at: https://YOUR_APP_NAME.herokuapp.com/
 
 ---
 
