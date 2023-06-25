@@ -17,8 +17,9 @@
 13. [Bugs](#bugs)
 14. [Deployment](#deployment)
 15. [Data Analysis and Machine Learning Libraries](#data-analysis-and-machine-learning-libraries)
-16. [Credits](#credits)
-17. [Acknowledgements](#Acknowledgements)
+16. [Technologies used](#Technologies-used)
+17. [Credits](#credits)
+18. [Acknowledgements](#Acknowledgements)
 
 ---
 
@@ -575,7 +576,44 @@ Compressed or optimized the large files to reduce their size. Alternatively, use
 
 ## Data Analysis and Machine Learning Libraries
 
-- Here you should list the libraries you used in the project and provide an example(s) of how you used these libraries.
+- tensorflow-cpu 2.12.0
+  - Used for creating and training deep learning models.
+- numpy 1.23.5
+  - A fundamental package for array computing. It is used for numerical operations and is the backbone of other libraries like pandas and scikit-learn.
+- scikit-learn 0.24.2
+  - Used for data preprocessing, various machine learning algorithms, and model evaluation.
+- streamlit 1.22.0
+  - A library to create custom web apps for machine learning and data science projects with ease. Used for building an interactive dashboard for the project.
+- pandas 1.4.0
+  - Used for creating and saving data in dataframes, data manipulation, and analysis.
+- matplotlib 3.3.1
+  - A plotting library for the Python programming language. Used for creating static, interactive, and animated visualizations in Python.
+- keras 2.6.0
+  - A high-level neural networks API, written in Python. It is used to define and train neural network models with ease, and is often used in conjunction with TensorFlow.
+- plotly 5.14.1
+  - A graphing library for making interactive, publication-quality graphs. Used for plotting the model's learning curves and other interactive plots.
+- seaborn 0.11.0
+  - A Python data visualization library based on matplotlib. It provides a high-level interface for drawing attractive and informative statistical graphics, such as the confusion matrix for the model.
+- protobuf 3.20.3
+  - Used internally by TensorFlow for serializing the model structure and weights.
+- Jinja2 3.1.2
+  - Used for rendering data in web apps, including those created with Streamlit.
+- joblib 1.2.0
+  - A set of tools for lightweight pipelining in Python. Used for saving scikit-learn models and loading them.
+- Keras-Preprocessing 1.1.2
+  - A utility library that provides essential functions for preprocessing the data before feeding it into a neural network. It includes functions for encoding labels, normalizing images, and augmenting data.
+
+---
+
+## Technologies used
+
+- Jupiter Notebook
+- Kaggle
+- GitHub
+- Gitpod
+- VS Code 
+- Heroku
+- Python
 
 ---
 
