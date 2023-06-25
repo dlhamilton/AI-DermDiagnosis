@@ -496,6 +496,20 @@ By following the CRISP-DM methodology, and using the tools on GitHub can achieve
 ---
 
 ## Improvements and Future Plans
+### Improved accuracy in predictions.
+At present, the model boasts an accuracy of 80%, which, although impressive, leaves room for enhancement. It would be exceptional if the model's performance could be elevated to achieve even higher accuracy. Additionally, improving the F1 score is crucial, as this would indicate a more balanced ratio between precision and recall, thereby making the model more reliable. This enhancement can be accomplished through various means, such as class balancing, data augmentation, hyperparameter tuning, employing a more complex architecture, or incorporating ensemble methods. A significant boost in accuracy could position the application as a primary tool for individuals in classifying their lesions, rather than merely serving as an auxiliary resource.
+
+### Support for additional skin types and conditions.
+While the HAM10000 dataset provides a solid foundation for skin cancer detection models, it is imperative to recognize the need for inclusivity and diversity in medical datasets. Skin cancer can manifest differently on black skin compared to white skin, and historically, medical datasets have not been representative of the diversity in skin types. As part of responsible AI development, it is essential to ensure that models are trained on data that represents all skin tones. This will enable the development of robust and unbiased models that can effectively serve diverse populations. Researchers and developers should consider augmenting datasets like HAM10000 with additional images representing black and brown skin tones. This is a critical step in developing models that are equally effective in detecting skin cancer among individuals with darker skin and addressing health disparities.
+
+### Enhanced user interface for easier navigation.
+The application could be meticulously designed to ensure cross-platform compatibility, making it accessible on various devices. Furthermore, by integrating it into an all-encompassing healthcare application, the user experience can be significantly enriched. The interface could be intuitively designed with streamlined navigation to facilitate user engagement and provide them with critical health insights at their fingertips.
+
+### Option to consult a dermatologist through the platform.
+Incorporating an option that allows users to schedule consultations with dermatologists directly through the application could be invaluable. By doing so, users can effortlessly transition from receiving an initial classification result to discussing it with a medical expert. This feature could also include a provision for virtual consultations, ensuring that specialist advice is just a few clicks away, irrespective of the user’s location.
+
+### Integration with health applications to track skin health over time.
+The app could be equipped with a comprehensive tracking system that enables users to monitor the evolution of their skin lesions over time. By allowing users to log and compare images, the application could provide crucial data on changes in shape, size, and other attributes of the lesions. This feature could be enhanced with machine learning algorithms to predict trends and alert the user to any concerning developments. Moreover, integrating this with other health applications could enable holistic health monitoring, empowering users to take proactive measures in managing their skin health.
 
 ---
 
