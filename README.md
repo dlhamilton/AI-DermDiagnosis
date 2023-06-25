@@ -496,6 +496,7 @@ By following the CRISP-DM methodology, and using the tools on GitHub can achieve
 ---
 
 ## Improvements and Future Plans
+
 ### Improved accuracy in predictions.
 At present, the model boasts an accuracy of 80%, which, although impressive, leaves room for enhancement. It would be exceptional if the model's performance could be elevated to achieve even higher accuracy. Additionally, improving the F1 score is crucial, as this would indicate a more balanced ratio between precision and recall, thereby making the model more reliable. This enhancement can be accomplished through various means, such as class balancing, data augmentation, hyperparameter tuning, employing a more complex architecture, or incorporating ensemble methods. A significant boost in accuracy could position the application as a primary tool for individuals in classifying their lesions, rather than merely serving as an auxiliary resource.
 
@@ -515,7 +516,43 @@ The app could be equipped with a comprehensive tracking system that enables user
 
 ## Bugs
 
-- You will need to mention unfixed bugs and why they were not fixed. This section should include shortcomings of the frameworks or technologies used. Although time can be a significant variable to consider, paucity of time and difficulty understanding implementation is not a valid reason to leave bugs unfixed.
+### Fixed Bug: Blue-Tinted Images
+
+#### Issue:
+The images displayed appeared with a blue tint. This was due to a discrepancy in color channel ordering, as OpenCV reads images in BGR (Blue-Green-Red) format while matplotlib’s imshow expects them in RGB (Red-Green-Blue) format.
+
+#### Resolution:
+Converted the color channels from BGR to RGB after reading the image with OpenCV, before displaying it with matplotlib. The conversion can be achieved using cv2.cvtColor() function.
+
+```
+import cv2
+image = cv2.imread('path_to_image')
+image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+```
+
+### Bug: Imbalanced Dataset
+
+#### Issue:
+The dataset used for training the model is imbalanced, with the 'nv' class having significantly more samples than the other classes. This can affect the model's performance by making it biased towards the majority class.
+
+#### Potential Solution:
+Balance the dataset either by oversampling the minority classes, undersampling the majority class, or generating synthetic samples (data augmentation). This can be achieved using techniques such as SMOTE or by using image data generators.
+
+### Fixed Bug: Heroku Deployment Issue due to Large Size
+
+#### Issue:
+While deploying the application to Heroku, the size of the TensorFlow library and other components were too large for the allowed storage limit on Heroku.
+
+#### Resolution:
+Added non-essential files and directories to the .slugignore file to reduce the slug size. Additionally, considered using smaller, more efficient libraries or optimizing the existing ones.
+
+### Fixed Bug: GitHub File Size Limitation
+
+#### Issue:
+Some output files and the first version of the model were too large to be pushed to GitHub due to its file size limitations.
+
+#### Resolution:
+Compressed or optimized the large files to reduce their size. Alternatively, used Git LFS (Large File Storage) to store the large files. Additionally, in the case of models, considered saving only the model weights instead of the entire model structure and data.
 
 ---
 
