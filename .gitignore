@@ -17,12 +17,6 @@ outputs/modelling_evaluation_v3
 outputs/modelling_evaluation_v4
 outputs/modelling_evaluation_v5
 outputs/modelling_evaluation_v6
-*.ipynb
 
-inputs/skin_cancer_dataset/HAM10000_metadata.csv
-inputs/skin_cancer_dataset/hmnist_8_8_L.csv
-inputs/skin_cancer_dataset/hmnist_8_8_RGB.csv
-inputs/skin_cancer_dataset/hmnist_28_28_L.csv
-inputs/skin_cancer_dataset/hmnist_28_28_RGB.csv
 inputs/skin_cancer_dataset/sorted_images/test
 inputs/skin_cancer_dataset/sorted_images/train
