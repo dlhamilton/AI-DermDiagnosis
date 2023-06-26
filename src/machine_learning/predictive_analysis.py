@@ -45,7 +45,10 @@ def plot_predictions_probabilities(pred_proba, pred_class, class_names):
         x='Diagnostic',
         y='Probability',
         range_y=[0, 1],
+        text='Probability',
         width=600, height=300, template='seaborn')
+    fig.update_traces(textposition='outside')
+    fig.update_layout(yaxis_tickformat='%')
     st.plotly_chart(fig)
 
 
