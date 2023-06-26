@@ -559,6 +559,34 @@ Compressed or optimized the large files to reduce their size. Alternatively, use
 
 ## Deployment
 
+### Cloning & Forking
+#### Fork
+1. On GitHub.com, navigate to the [dlhamilton/AI-DermDiagnosis](https://github.com/dlhamilton/AI-DermDiagnosis) repository.
+2. In the top-right corner of the page, click Fork.
+3. By default, forks are named the same as their parent repositories. You can change the name of the fork to distinguish it further.
+4. Add a description to your fork.
+5. Click Create fork.
+
+#### Clone
+1. Above the list of files click the button that says 'Code'.
+2. Copy the URL for the repository.
+3. Open Terminal. Change the directory to the location where you want the cloned directory.
+4. Type git clone, and then paste the URL example ``` git clone https://github.com/dlhamilton/AI-DermDiagnosis.git ```
+5. Press Enter.
+
+### Local Deployment
+1. Sign up to [Gitpod](https://gitpod.io/)
+2. Download the Gitpod browser extension.
+3. On GitHub.com, navigate to the [dlhamilton/AI-DermDiagnosis](https://github.com/dlhamilton/AI-DermDiagnosis) repository.
+4. Above the list of files click the button that says 'Gitpod'.
+5. Once open you will need to install the libraries, you can do this by typing ``` pip3 install -r requirements.txt ``` into the terminal
+6. In the terminal type ``` pip3 install jupyter ```
+7. In the terminal type ``` jupyter notebook --NotebookApp.token='' --NotebookApp.password='' ``` to start the jupyter server.
+8. Open port 8888 preview or browser
+9. Open the jupyter_notebooks directory in the jupyter webpage that has opened and click on the notebook you want to open.
+10. Click the button Not Trusted and choose Trust. ( Note that the kernel says Python 3. It inherits from the workspace so it will be Python-3.8.12 as installed by our template. To confirm this you can use ! python --version in a notebook code cell.)
+12. To start the streamlit app type ``` streamlit run app.py ``` into the terminal. 
+
 ### Remote Deployment on Heroku
 
 - The App live link is: <https://ai-dermdiagnosis-75d8dba881ea.herokuapp.com/>
