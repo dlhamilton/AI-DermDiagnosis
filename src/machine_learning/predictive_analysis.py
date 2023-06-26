@@ -13,7 +13,7 @@ def load_model_and_predict(my_image, model_path, class_names):
     """
     Load and perform ML prediction over live images
     """
-    model = load_model(model_path)
+    model = load_model(model_path, compile=False)
 
     pred_logits = model.predict(my_image)[0]
     pred_proba = softmax(pred_logits)
