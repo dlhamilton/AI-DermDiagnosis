@@ -122,7 +122,7 @@ def page_lesion_exploration_body():
         img2 = mpimg.imread(type2_path)
         
         # Plot images side by side
-        col1, col2 = st.columns(2)
+        col1, col2 = st.beta_columns(2)
         with col1:
             st.image(img1, caption=f'col_dis_{selected_type_1}', use_column_width=True)
         with col2:
