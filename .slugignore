@@ -36,6 +36,7 @@ build/
 
 
 README.md
+
 .gitpod.dockerfile
 .gitpod.yml
 app_pages/__pycache__/*
@@ -48,3 +49,6 @@ outputs/modelling_evaluation_v4
 outputs/modelling_evaluation_v5
 outputs/modelling_evaluation_v6
 jupyter_notebooks/
+myenv/
+venv/
+outputs/
