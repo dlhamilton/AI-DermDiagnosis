@@ -531,6 +531,21 @@ image = cv2.imread('path_to_image')
 image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
 ```
 
+### Bug: Heroku Slug Size
+
+#### Issue:
+When deploying the Skin Lesion Classifier app on Heroku, an issue arose due to the size of the model v5 used in the application. The model v5, which offered higher accuracy, exceeded the Heroku slug size limit. This prevented successful deployment of the app on Heroku.
+
+#### Resolution:
+As a practical solution, a smaller model variant, model v5 small, which employed MobileNetV2, was chosen. This smaller model utilized less memory space while still providing acceptable accuracy for the skin lesion classification task.
+
+#### Potential Future Solution:
+Model Compression: Techniques such as quantization, pruning, or knowledge distillation were explored to reduce the size of the model without sacrificing its performance significantly.
+
+Model Optimization: The model architecture was optimized by reducing the number of parameters, simplifying operations, or utilizing more efficient model architectures. This aimed to decrease the model's memory footprint while maintaining a reasonable level of accuracy.
+
+Alternative Deployment Platform: Considering the limitations imposed by Heroku's slug size restrictions, alternative deployment platforms can be explored that will provide more generous memory limits or more flexible deployment options.
+
 ### Bug: Imbalanced Dataset
 
 #### Issue:
