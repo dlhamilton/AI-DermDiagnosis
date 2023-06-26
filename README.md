@@ -368,10 +368,6 @@ Data Privacy: Given the sensitive nature of medical images, ensure all data is h
 
 ## Dashboard Design
 
-- List all dashboard pages and their content, either blocks of information or widgets, like buttons, checkboxes, images, or any other item that your dashboard library supports.
-
-- Later, during the project development, you may revisit your dashboard plan to update a given feature (for example, at the beginning of the project you were confident you would use a given plot to display an insight but subsequently you used another plot type).
-
 ### Pages
 
 **Project Summary** - This page provides an overall summary of the project. Showing the outline of the system, information about the data set, the business requirments and a link to this read me.
@@ -382,6 +378,7 @@ Data Privacy: Given the sensitive nature of medical images, ensure all data is h
 - Data Set Information: Summary statistics, metadata, and other relevant details about the data set being used.
 - Business Requirements: A concise list of the business requirements guiding the project.
 - Read Me Link: A clickable button or hyperlink leading to a more detailed project documentation.
+![Project Summary Page](readme_images/screenshot_1.png)
 
 **Lesion Exploration** - This page provides a overview of the lesions so you can see the differances.
 
@@ -396,29 +393,34 @@ Data Privacy: Given the sensitive nature of medical images, ensure all data is h
 - Image Montage Display: The generated image montage displayed on the page.
 
 Note: Each checkbox option can be independently selected or deselected to control the visibility of the corresponding visualization on the page.
+![Lesion Exploration Page](readme_images/screenshot_2.png)
 
 **Upload page and Results** - This page allows users (either individuals or healthcare professionals) to upload a skin lesion image for diagnosis. After the image is processed, the diagnosis and confidence level.
 
 - Image Upload Interface: A form or button allowing users to upload skin lesion images for analysis.
 - Diagnosis Display: A text block or similar element showing the diagnosis once the image has been processed.
 - Confidence Level Display: A bar chart, gauge, or similar visualization showing the confidence level associated with the diagnosis.
+![Upload page and Results Page](readme_images/screenshot_3.png)
 
 **Project Hypothesis and Validation** - This page contains information related to the initial assumptions or hypotheses made about the project, and how those hypotheses are being validated or have been validated.
 
 - Hypotheses List: A bulleted or numbered list of the initial project hypotheses.
 - Validation Approach: A text block explaining how each hypothesis is or will be validated.
+![Project Hypothesis and Validation Page](readme_images/screenshot_4.png)
 
 **ML Performance Page** - This page presents detailed metrics on the performance of the AI model. It might include confusion matrix, ROC curve, precision-recall curve, F1 score, AUC-ROC value, etc. It can also include a comparison of performance metrics over different versions of the model.
 
 - Model Metrics: Various visualizations (like confusion matrix, ROC curve, precision-recall curve) showing detailed performance metrics for the AI model.
 - Model Comparison: A table or graph comparing the performance of different model versions or configurations.
 - Model Interpretation: A text block explaining what these metrics mean in terms of model performance and quality.
+![ML Performance Page](readme_images/screenshot_5.png)
 
 **Feedback / Reporting Page** - This page allows users to provide feedback on the system's performance and report any issues. It could be a form where users can rate the system, leave comments, or report false positives/negatives. It will also show future features for the system.
 
 - User Feedback Form: A form where users can rate their experience with the system, leave comments, or report false positives or negatives.
 - Reporting Mechanism: A separate form or section where users can report technical issues or other problems with the system.
 - Future Features: A text block outlining upcoming features or improvements planned for the system.
+![Feedback / Reporting Page](readme_images/screenshot_6.png)
 
 ---
 
