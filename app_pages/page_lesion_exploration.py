@@ -7,7 +7,9 @@ import matplotlib.pyplot as plt
 import os
 import matplotlib.image as mpimg
 from src.machine_learning.visualize_difference import (
-                                                    plot_diff_bet_avg_image_labels
+                                                    plot_diff_bet_avg_image_labels,
+                                                    load_image_as_array,
+                                                    subset_image_label
                                                     )
 
 import itertools
@@ -88,26 +90,19 @@ def page_lesion_exploration_body():
 
       st.write("---")
 
-
     if st.checkbox("Differences between average lesion types"):
-
-      X = np.load('outputs/v1/X.npy', allow_pickle=True)
-      y = np.load('outputs/v1/y.npy', allow_pickle=True)
-
-      st.warning(
-            f"* We notice this study didn't show "
-            f"patterns where we could intuitively differentiate one from another.")
-
+      
       unique_labels = np.unique(y)
       label_1 = st.selectbox("Select the first label", options=unique_labels, index=0)
       label_2 = st.selectbox("Select the second label", options=unique_labels, index=1)
 
       if label_1 and label_2:
-        plot = plot_diff_bet_avg_image_labels(X, y, label_1, label_2)
-        st.pyplot(plot)
+          images_label_1 = subset_image_label(X, y, label_1)
+          images_label_2 = subset_image_label(X, y, label_2)
+          plot = plot_diff_bet_avg_image_labels(images_label_1, images_label_2, label_1, label_2)
+          st.pyplot(plot)
       st.write("---")
 
-    
     if st.checkbox("Differences between lesions colours"):
       st.warning(
         f"* We notice this study didn't show "
@@ -208,3 +203,8 @@ def image_montage(dir_path, label_to_display, nrows, ncols, figsize=(15,10)):
   else:
     print("The label you selected doesn't exist.")
     print(f"The existing options are: {labels}")
+
+X, y = load_image_as_array(
+      my_data_dir = "inputs/skin_cancer_dataset/sorted_images/validation",
+      new_size = (210, 450, 3),
+      n_images_per_label=30)
