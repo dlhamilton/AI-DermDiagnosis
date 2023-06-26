@@ -658,22 +658,32 @@ Compressed or optimized the large files to reduce their size. Alternatively, use
 
 ## Credits
 
-- In this section, you need to reference where you got your content, media and extra help from. It is common practice to use code from other repositories and tutorials, however, it is important to be very specific about these sources to avoid plagiarism.
-- You can break the credits section up into Content and Media, depending on what you have included in your project.
-
 ### Content
 
-- The text for the Home page was taken from Wikipedia Article A
-- Instructions on how to implement form validation on the Sign-Up page was taken from [Specific YouTube Tutorial](https://www.youtube.com/)
-- The icons in the footer were taken from [Font Awesome](https://fontawesome.com/)
+- The lesion dataset was linked from Kaggle and created by Tschandl, P., Rosendahl, C. & Kittler, H.nstitute. https://www.kaggle.com/datasets/kmader/skin-cancer-mnist-ham10000
+
+- There has been useful guidance from various articles from Stack Overflow - https://stackoverflow.com/
+
+- Details about lesions and stats on imaging classification - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7573031/#:~:text=They%20classify%20three%20different%20classes,keratosis%2C%20and%20benign%20or%20nevus.
+
+- Ideas on how to improve the model for the lesion classification - https://www.nature.com/articles/s41598-022-22644-9
+
+- What to look for in shape and size of lesions - https://patient.info/doctor/black-and-brown-skin-lesions#:~:text=Black%20and%20brown%20skin%20lesions%20can%20be%20considered%20as%20melanocytic,is%20to%20exclude%20malignant%20melanoma.
+
+- lesions on dark skin - https://patient.info/doctor/black-and-brown-skin-lesions
 
 ### Media
 
-- The photos used on the home and sign-up page are from This Open-Source site
-- The images used for the gallery page were taken from this other open-source site
+- The banner for the project was made using https://logo-maker.freelogodesign.org/
 
 ---
 
 ## Acknowledgements
 
-- Thank the people that provided support through this project.
+- A huge thank you to my mentors Chris Quinn, Mo Shami and the Code Institute for their advice and support during the development of this project.
+
+---
+
+### Deployed version at [AI-DermDiagnosis](https://ai-dermdiagnosis-75d8dba881ea.herokuapp.com/)
+
+---
