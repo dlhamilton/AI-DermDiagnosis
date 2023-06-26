@@ -41,3 +41,8 @@ README.md
 app_pages/__pycache__/*
 jupyter_notebooks/
 readme_images/
+outputs/modelling_evaluation_v1
+outputs/modelling_evaluation_v2
+outputs/modelling_evaluation_v3
+outputs/modelling_evaluation_v4
+outputs/modelling_evaluation_v6

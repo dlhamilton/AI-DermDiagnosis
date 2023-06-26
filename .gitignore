@@ -11,4 +11,8 @@ kaggle.json
 myenv/
 venv/
 inputs/
-outputs/
+outputs/modelling_evaluation_v1
+outputs/modelling_evaluation_v2
+outputs/modelling_evaluation_v3
+outputs/modelling_evaluation_v4
+outputs/modelling_evaluation_v6
