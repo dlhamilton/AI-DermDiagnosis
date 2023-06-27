@@ -2,10 +2,10 @@
 
 ## Table of Contents
 
-1. [User Stories](#user-stories)
-2. [Epics](#epics)
-3. [Dataset Content](#dataset-content)
-4. [Business Requirements](#business-requirements)
+1. [Business Requirements](#business-requirements)
+2. [User Stories](#user-stories)
+3. [Epics](#epics)
+4. [Dataset Content](#dataset-content)
 5. [Hypothesis and validation](#hypothesis-and-how-to-validate)
 6. [The model](#the-model)
 7. [Implementation of the Business Requirements](#the-rationale-to-map-the-business-requirements-to-the-data-visualizations-and-ml-tasks)
@@ -24,6 +24,36 @@
 ---
 
 ### Deployed version at [AI-DermDiagnosis](https://ai-dermdiagnosis-75d8dba881ea.herokuapp.com/)
+
+---
+
+## Introduction
+
+- AI-Derm is a healthcare startup that uses artificial intelligence for dermatological diagnoses. It is spearheading a project to develop an AI-powered application that can help healthcare professionals and individuals identify skin cancer at an early stage. The primary aim is to distinguish between different lesion types, providing an immediate diagnosis and confidence level, which would recommend further medical consultation if necessary.
+
+## Business Requirements
+
+- Currently, the process of diagnosing skin cancer is often time-consuming and requires expert analysis. A dermatologist might need to examine the suspicious lesion visually, perform a dermoscopic analysis, and in some cases, conduct a biopsy to definitively diagnose if the skin lesion is malignant. This process can take from days to weeks, depending on various factors such as the healthcare system's efficiency and the need for further tests.
+
+- However, early detection of skin cancer, particularly malignant melanoma, is crucial for effective treatment. When identified at an early stage, the survival rate for melanoma is significantly high. However, if the cancer has spread to other parts of the body, the survival rate drops dramatically. This underlines the importance of rapid and accurate diagnosis.
+
+- The proposed AI model could provide instant predictions with associated confidence levels, significantly reducing the time required to identify potential malignant skin lesions. This immediacy could lead to earlier consultations and interventions, increasing the chances of successful treatment. It's important to note that while the AI model can assist with initial screening and diagnosis, any prediction it makes must be verified by a healthcare professional to ensure accuracy and safety.
+
+  - **Business Requirement 1**: The client aims to visually differentiate lesions. The model should be capable of reaching an accuracy of at least 70%.
+
+  - **Business Requirement 2**: The model should provide a confidence level for each prediction.
+
+  - **Business Requirement 3**: If a skin lesion is predicted as malignant with high confidence, the system should recommend immediate medical consultation.
+
+  - **Business Requirement 4**: The project will deliver a web application where users can upload a skin lesion image, and the system will provide a diagnosis, a confidence level of the prediction.
+
+  - **Business Requirement 5**: The AI model's insights should assist healthcare professionals in making informed decisions about the treatment process.
+
+  - **Business Requirement 6**: The model's performance will be evaluated using balanced performance metrics such as F1 Score.
+
+  - **Business Requirement 7**: The client is interested to have a study to visually differentiate between lesions.
+
+This solution aims to augment the decision-making process for dermatologists and bring about a transformative change in the early detection and treatment of skin cancer.
 
 ---
 
@@ -134,34 +164,6 @@
 - In-vivo confocal microscopy (confocal): This non-invasive imaging technique provides a real-time "optical biopsy" of the skin, allowing for a diagnosis without the need for a physical biopsy. If a high-confidence prediction aligns with this method, it should be taken seriously, and an in-person consultation with a healthcare professional is necessary.
 
 In all cases, regardless of the diagnostic method, a prediction by the AI should be considered as a suggestion or an additional tool for skin cancer screening, not a definitive diagnosis. A healthcare professional should always be consulted for accurate diagnosis and treatment recommendations.
-
----
-
-## Business Requirements
-
-- AI-Derm is a healthcare startup that uses artificial intelligence for dermatological diagnoses. It is spearheading a project to develop an AI-powered application that can help healthcare professionals and individuals identify skin cancer at an early stage. The primary aim is to distinguish malignant skin lesions from benign ones, providing an immediate diagnosis and confidence level, which would recommend further medical consultation if necessary.
-
-- Currently, the process of diagnosing skin cancer is often time-consuming and requires expert analysis. A dermatologist might need to examine the suspicious lesion visually, perform a dermoscopic analysis, and in some cases, conduct a biopsy to definitively diagnose if the skin lesion is malignant. This process can take from days to weeks, depending on various factors such as the healthcare system's efficiency and the need for further tests.
-
-- However, early detection of skin cancer, particularly malignant melanoma, is crucial for effective treatment. When identified at an early stage, the survival rate for melanoma is significantly high. However, if the cancer has spread to other parts of the body, the survival rate drops dramatically. This underlines the importance of rapid and accurate diagnosis.
-
-- The proposed AI model could provide instant predictions with associated confidence levels, significantly reducing the time required to identify potential malignant skin lesions. This immediacy could lead to earlier consultations and interventions, increasing the chances of successful treatment. It's important to note that while the AI model can assist with initial screening and diagnosis, any prediction it makes must be verified by a healthcare professional to ensure accuracy and safety.
-
-  - **Business Requirement 1**: The client aims to visually differentiate lesions. The model should be capable of reaching an accuracy of at least 70%.
-
-  - **Business Requirement 2**: The model should provide a confidence level for each prediction.
-
-  - **Business Requirement 3**: If a skin lesion is predicted as malignant with high confidence, the system should recommend immediate medical consultation.
-
-  - **Business Requirement 4**: The project will deliver a web application where users can upload a skin lesion image, and the system will provide a diagnosis, a confidence level of the prediction.
-
-  - **Business Requirement 5**: The AI model's insights should assist healthcare professionals in making informed decisions about the treatment process.
-
-  - **Business Requirement 6**: The model's performance will be evaluated using balanced performance metrics such as F1 Score.
-
-  - **Business Requirement 7**: The client is interested to have a study to visually differentiate between lesions.
-
-This solution aims to augment the decision-making process for dermatologists and bring about a transformative change in the early detection and treatment of skin cancer.
 
 ---
 
