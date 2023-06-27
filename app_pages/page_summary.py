@@ -63,7 +63,7 @@ def page_summary_body():
     
 
     st.success(
-        f"The project has 7 business requirements:\n"
+        f"The project has 7 business requirements which have all been addressed and completed:\n"
 
         f"* Business Requirement 1: - The client aims to visually differentiate lesions. The model should be "
         f"capable of reaching an accuracy of at least 70%. \n"

@@ -13,6 +13,8 @@ def page_project_hypothesis_body():
     Returns:
         None
     """
+
+    st.info("The ML model and app have addressed and provided a postive result to all the business requirements.")
     
     st.write("### Project Hypothesis and Validation")
 
