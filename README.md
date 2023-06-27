@@ -231,7 +231,7 @@ The purpose of these iterations was to explore various approaches and evaluate t
 
 By employing techniques such as SMOTE upsampling and downsampling, the previous iterations aimed to address the class imbalance problem by either generating synthetic samples or reducing the number of majority class samples. These techniques were used in conjunction with different models to examine their impact on model performance.
 
-Overall, these iterations demonstrate a comprehensive exploration of techniques and models, reflecting a deep understanding of the challenges posed by imbalanced data and a systematic approach to finding effective solutions.
+Overall, these iterations demonstrate a comprehensive exploration of techniques and models, reflecting a deep understanding of the challenges posed by imbalanced data and a systematic approach to finding effective solutions. Below are some of the tasks that I used to help perfect the model
 
 ### Model Tasks
 
@@ -437,9 +437,39 @@ plt.show()
 #### Conducting hyperparameter optimization
 #### Assessing feature importance
 #### Augmenting images and loading from folder to memory
+
+```
+train_set = augmented_image_data.flow_from_directory(train_path,
+                                                     target_size=image_shape[:2],
+                                                     color_mode='rgb',
+                                                     batch_size=batch_size,
+                                                     class_mode='categorical',
+                                                     shuffle=True
+                                                     )
+
+print(image_shape[:2])
+train_set.class_indices
+```
+
 #### Defining neural network architecture
 #### Using techniques to prevent overfitting (such as early stopping and dropout layer)
+
+```
+from tensorflow.keras.callbacks import EarlyStopping
+early_stop = EarlyStopping(monitor='val_loss', patience=3)
+```
+
 #### Fit the model/pipeline
+```
+model = create_model(num_classes=7)
+
+model.fit(X_train ,
+          y_train ,
+          epochs=35 ,
+          batch_size=128,
+          validation_data=(X_test , y_test) ,
+          callbacks=[learning_rate_reduction])
+```
 
 ---
 
