@@ -233,6 +233,214 @@ By employing techniques such as SMOTE upsampling and downsampling, the previous 
 
 Overall, these iterations demonstrate a comprehensive exploration of techniques and models, reflecting a deep understanding of the challenges posed by imbalanced data and a systematic approach to finding effective solutions.
 
+### Model Tasks
+
+#### Set image shape
+```
+image_shape = (75, 75, 3)
+image_shape
+
+joblib.dump(value=image_shape ,
+            filename=f"{file_path}/image_shape.pkl")
+
+import joblib
+image_shape = joblib.load(filename=f"{file_path}/image_shape.pkl")
+image_shape
+
+```
+
+#### Study for average and variability image
+```
+def plot_mean_variability_per_labels(X, y, figsize=(12, 5), save_image=False):
+    """
+    The pseudo-code for the function is:
+    * Loop over all labels
+    * Subset an array for a given label
+    * Calculate the mean and standard deviation
+    * Create a figure displaying the mean and variability of images
+    * Save the image
+    """
+
+    for label_to_display in np.unique(y):
+        sns.set_style("white")
+
+        y = y.reshape(-1, 1, 1)
+        boolean_mask = np.any(y == label_to_display, axis=1).reshape(-1)
+        arr = X[boolean_mask]
+
+        avg_img = np.mean(arr, axis=0)
+        std_img = np.std(arr, axis=0)
+        print(f"==== Label {label_to_display} ====")
+        print(f"Image Shape: {avg_img.shape}")
+        fig, axes = plt.subplots(nrows=1, ncols=2, figsize=figsize)
+        axes[0].set_title(f"Average image for label {label_to_display}")
+        axes[0].imshow(avg_img, cmap='gray')
+        axes[1].set_title(f"Variability image for label {label_to_display}")
+        axes[1].imshow(std_img, cmap='gray')
+
+        if save_image:
+            plt.savefig(f"{file_path}/avg_var_{label_to_display}.png",
+                        bbox_inches='tight', dpi=150)
+        else:
+            plt.tight_layout()
+            plt.show()
+            print("\n")
+```
+![average and variability image](readme_images/screenshot_7.png)
+
+#### The difference between average images
+```
+def subset_image_label(X, y, label_to_display):
+    y = y.reshape(-1, 1, 1)
+    boolean_mask = np.any(y == label_to_display, axis=1).reshape(-1)
+    df = X[boolean_mask]
+    return df
+
+
+def diff_bet_avg_image_labels_data_as_array(X, y, label_1, label_2, figsize=(20, 5), save_image=False):
+    """
+    Checks if the labels exist in the set of unique labels
+    Calculates the mean and difference for label1 and label2
+    Plots a chart and saves it if save_image=True
+    """
+    sns.set_style("white")
+
+    if (label_1 not in np.unique(y)) or (label_2 not in np.unique(y)):
+        print(
+            f"Either label {label} or label {label_2}, are not in {np.unique(y)} ")
+        return
+
+    # calculate mean from label1
+    images_label = subset_image_label(X, y, label_1)
+    label1_avg = np.mean(images_label, axis=0)
+
+    # calculate mean from label2
+    images_label = subset_image_label(X, y, label_2)
+    label2_avg = np.mean(images_label, axis=0)
+
+    # calculate difference and plot difference, avg label1 and avg label2
+    difference_mean = label1_avg - label2_avg
+    fig, axes = plt.subplots(nrows=1, ncols=3, figsize=figsize)
+    axes[0].imshow(label1_avg, cmap='gray')
+    axes[0].set_title(f'Average {label_1}')
+    axes[1].imshow(label2_avg, cmap='gray')
+    axes[1].set_title(f'Average {label_2}')
+    axes[2].imshow(difference_mean, cmap='gray')
+    axes[2].set_title(f'Difference image: Avg {label_1} & {label_2}')
+    if save_image:
+        plt.savefig(f"{file_path}/avg_diff.png", bbox_inches='tight', dpi=150)
+    else:
+        plt.tight_layout()
+        plt.show()
+```
+![average and variability image compare](readme_images/BR7.png)
+
+#### Image montage
+```
+def image_montage(dir_path, label_to_display, nrows, ncols, figsize=(15, 10)):
+    """
+    if the label exists in the directory
+    check if your montage space is greater than the subset size
+    create a list of axes indices based on nrows and ncols
+    create a Figure and display images
+    in this loop, load and plot the given image
+    """
+
+    if label_to_display in labels:
+
+        images_list = os.listdir(dir_path + '/' + label_to_display)
+        if nrows * ncols < len(images_list):
+            img_idx = random.sample(images_list, nrows * ncols)
+        else:
+            print(
+                f"Decrease nrows or ncols to create your montage. \n"
+                f"There are {len(images_list)} in your subset. "
+                f"You requested a montage with {nrows * ncols} spaces")
+            return
+
+        # create a list of axes indices based on nrows and ncols
+        list_rows = range(0, nrows)
+        list_cols = range(0, ncols)
+        plot_idx = list(itertools.product(list_rows, list_cols))
+
+        # create a Figure and display images
+        fig, axes = plt.subplots(nrows=nrows, ncols=ncols, figsize=figsize)
+        for x in range(0, nrows*ncols):
+            img = imread(dir_path + '/' + label_to_display + '/' + img_idx[x])
+            img_shape = img.shape
+            axes[plot_idx[x][0], plot_idx[x][1]].imshow(img)
+            axes[plot_idx[x][0], plot_idx[x][1]].set_title(
+                f"Width {img_shape[1]}px x Height {img_shape[0]}px")
+            axes[plot_idx[x][0], plot_idx[x][1]].set_xticks([])
+            axes[plot_idx[x][0], plot_idx[x][1]].set_yticks([])
+        plt.tight_layout()
+        plt.show()
+
+    else:
+        print("The label you selected doesn't exist.")
+        print(f"The existing options are: {labels}")
+```
+![image montage](readme_images/BR5.png)
+
+#### Plot number of images in train, validation, and test set.
+```
+df_freq = pd.DataFrame([])
+for folder in ['train', 'validation', 'test']:
+    for label in train_labels:
+        df_freq = df_freq.append(
+            pd.Series(data={'Set': folder,
+                            'Label': label,
+                            'Frequency': int(len(os.listdir(my_data_dir + '/' + folder + '/' + label)))}
+                      ),
+            ignore_index=True
+        )
+
+        print(
+            f"* {folder} - {label}: {len(os.listdir(my_data_dir+'/'+ folder + '/' + label))} images")
+
+print("\n")
+sns.set_style("whitegrid")
+plt.figure(figsize=(8, 5))
+sns.barplot(data=df_freq, x='Set', y='Frequency', hue='Label')
+plt.savefig(f'{file_path}/labels_distribution.png',
+            bbox_inches='tight', dpi=150)
+plt.show()
+```
+
+```
+* train - akiec: 228 images
+* train - df: 80 images
+* train - bkl: 769 images
+* train - vasc: 99 images
+* train - nv: 4693 images
+* train - bcc: 359 images
+* train - mel: 779 images
+* validation - akiec: 32 images
+* validation - df: 11 images
+* validation - bkl: 109 images
+* validation - vasc: 14 images
+* validation - nv: 670 images
+* validation - bcc: 51 images
+* validation - mel: 111 images
+* test - akiec: 67 images
+* test - df: 24 images
+* test - bkl: 221 images
+* test - vasc: 29 images
+* test - nv: 1342 images
+* test - bcc: 104 images
+* test - mel: 223 images
+```
+![Labels distribution](outputs/modelling_evaluation_v2/labels_distribution.png)
+
+
+#### Defining the ML pipeline steps
+#### Conducting hyperparameter optimization
+#### Assessing feature importance
+#### Augmenting images and loading from folder to memory
+#### Defining neural network architecture
+#### Using techniques to prevent overfitting (such as early stopping and dropout layer)
+#### Fit the model/pipeline
+
 ---
 
 ## The rationale to map the business requirements to the Data Visualisations and ML tasks
