@@ -550,6 +550,72 @@ for hyperparams, val_acc in best_val_acc_per_hyperparam.items():
     print(f"{hyperparams}: {val_acc}")
 ```
 
+#### Assessing feature importance
+With the csv that came with the lesion data. I also looked at some of the patterns in the data to see if it will help with the classification. 
+
+* Feature Importance
+```
+data = pd.read_csv("inputs/skin_cancer_dataset/HAM10000_metadata.csv")
+
+data = data.drop(columns=["lesion_id", "image_id"], errors="ignore")
+
+data = data.fillna(data.mean())
+
+for column in ["dx_type", "sex", "localization"]:
+    le = LabelEncoder()
+    data[column] = le.fit_transform(data[column])
+
+X = data.drop('dx', axis=1)
+y = data['dx']
+
+# Split the data into training and test sets
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
+
+# Train a Decision Tree classifier
+model = DecisionTreeClassifier(max_depth=3)  # limit depth of tree
+model.fit(X_train, y_train)
+
+# Make predictions on the test set
+y_pred = model.predict(X_test)
+
+# Evaluate the model
+print(classification_report(y_test, y_pred))
+print(confusion_matrix(y_test, y_pred))
+
+# Print feature importance
+print("Feature importances:")
+for name, importance in zip(X.columns, model.feature_importances_):
+    print(f"{name}: {importance}")
+```
+![feature importance](readme_images/feature_importance.png)
+
+* Age Distribution
+```
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+plt.figure(figsize=(10, 6))
+sns.boxplot(x='dx', y='age', data=data)
+plt.title('Age distribution by dx (label)')
+plt.show()
+```
+![Age Distribution](readme_images/age_plot.png)
+
+* Cross-tabulation of Lesion Diagnosis (dx) and Diagnosis Method (dx_type)
+```
+data = pd.read_csv("inputs/skin_cancer_dataset/HAM10000_metadata.csv")
+
+cross_tab = pd.crosstab(data['dx'], data['dx_type'])
+print("\nCross-tabulation between dx_type and dx:")
+print(cross_tab)
+
+plt.figure(figsize=(10, 7))
+sns.heatmap(cross_tab, annot=True, fmt="d", cmap="YlGnBu")
+plt.title('Cross-tabulation between dx_type and dx')
+plt.show()
+```
+![Cross-tabulation](readme_images/cross_plot.png)
+
 ---
 
 ## The rationale to map the business requirements to the Data Visualisations and ML tasks
