@@ -839,6 +839,9 @@ By following the CRISP-DM methodology, and using the tools on GitHub can achieve
 
 ## Improvements and Future Plans
 
+### Feedback page Forms.
+Currently, the feedback and bug reporting feature within the app is not functional as it does not send messages. This is because the client has yet to provide the email address to which these comments and messages should be directed. Once I have received this information, I will promptly configure the email functionality, ensuring the seamless transmission of feedback and bug reports.
+
 ### Improved accuracy in predictions.
 At present, the model boasts an accuracy of 80%, which, although impressive, leaves room for enhancement. It would be exceptional if the model's performance could be elevated to achieve even higher accuracy. Additionally, improving the F1 score is crucial, as this would indicate a more balanced ratio between precision and recall, thereby making the model more reliable. This enhancement can be accomplished through various means, such as class balancing, data augmentation, hyperparameter tuning, employing a more complex architecture, or incorporating ensemble methods. A significant boost in accuracy could position the application as a primary tool for individuals in classifying their lesions, rather than merely serving as an auxiliary resource.
 
