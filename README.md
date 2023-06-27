@@ -464,6 +464,56 @@ Data_train = np.array(Data_train).reshape(image_shape)
 print('Shape of Data:', Data_train.shape)
 ```
 
+#### Upsampling and downsampling for imbalance
+```
+def balance_dataset(original_directory, new_directory, target_size=(75, 75), batch_size=32, target_count=800):
+    datagen = ImageDataGenerator(
+    rescale=1./255,
+    rotation_range=10,  # Rotation within a range of +/- 10 degrees
+    zoom_range=0.1,  # Zoom in or out by 10%
+    horizontal_flip=True,  # Horizontal flip
+    vertical_flip=True,   # Vertical flip
+    brightness_range=(0.9, 1.1),  # Slightly adjust brightness
+    width_shift_range=0.1,  # Horizontal shift within a range of +/- 10% of the width
+    height_shift_range=0.1  # Vertical shift within a range of +/- 10% of the height
+)
+    
+    generator = datagen.flow_from_directory(
+        directory=original_directory,
+        target_size=target_size,
+        batch_size=batch_size,
+        class_mode="categorical",
+        shuffle=False
+    )
+    
+    _, y = next(generator)
+    class_counts = np.sum(y, axis=0)
+    
+    if not os.path.exists(new_directory):
+        os.makedirs(new_directory)
+    for class_name in generator.class_indices.keys():
+        os.makedirs(os.path.join(new_directory, class_name), exist_ok=True)
+    
+    for i, class_name in enumerate(generator.class_indices.keys()):
+        src_class_dir = os.path.join(original_directory, class_name)
+        dest_class_dir = os.path.join(new_directory, class_name)
+        
+        file_names = os.listdir(src_class_dir)
+        
+        if class_counts[i] > target_count:
+            file_names = np.random.choice(file_names, target_count, replace=False)
+            for file_name in file_names:
+                shutil.copy(os.path.join(src_class_dir, file_name), dest_class_dir)
+        elif class_counts[i] < target_count:
+            num_to_add = target_count - class_counts[i]
+            file_names_to_duplicate = np.random.choice(file_names, int(num_to_add))
+            for j, file_name in enumerate(file_names_to_duplicate):
+                shutil.copy(os.path.join(src_class_dir, file_name), os.path.join(dest_class_dir, f"copy_{j}_{file_name}"))
+        else:
+            for file_name in file_names:
+                shutil.copy(os.path.join(src_class_dir, file_name), dest_class_dir)
+```
+
 #### Defining neural network architecture
 ```
 def create_tf_model(num_classes, input_shape=image_shape):
