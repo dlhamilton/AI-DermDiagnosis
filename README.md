@@ -501,6 +501,55 @@ model.fit(X_train ,
           callbacks=[learning_rate_reduction])
 ```
 
+#### Conducting hyperparameter optimization
+```
+def train_model_with_hyperparameters(learning_rate, df_train, df_val):
+    # Define the model
+    model = create_tf_model(num_classes=len(class_names), input_shape=(img_height, img_width, 3))
+
+    # Compile the model with the given learning rate
+    model.compile(optimizer=Adam(learning_rate=learning_rate),
+                  loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True),
+                  metrics=['accuracy'])
+
+    # Define early stopping callback
+    early_stopping = EarlyStopping(monitor='val_loss', patience=3)
+
+    # Fit the model using your datasets
+    history = model.fit(
+        df_train,
+        validation_data=df_val,
+        epochs=20,
+        callbacks=[early_stopping]
+    )
+
+    # Get the best validation accuracy for this hyperparameter
+    best_val_acc = max(history.history['val_accuracy'])
+
+    return best_val_acc
+
+# Define the hyperparameters you want to tune
+learning_rates = [0.001, 0.0001, 0.00001]
+
+# Dictionary to store the best validation accuracy for each set of hyperparameters
+best_val_acc_per_hyperparam = {}
+
+# Loop over the hyperparameters
+for learning_rate in learning_rates:
+    print(f"Training with learning rate: {learning_rate}")
+    
+    # Train the model with the current set of hyperparameters
+    best_val_acc = train_model_with_hyperparameters(learning_rate, df_train, df_val)
+    
+    # Store the best validation accuracy for this set of hyperparameters
+    best_val_acc_per_hyperparam[f'learning_rate_{learning_rate}'] = best_val_acc
+
+# Print the best validation accuracies for each set of hyperparameters
+print("\nBest validation accuracies for each set of hyperparameters:")
+for hyperparams, val_acc in best_val_acc_per_hyperparam.items():
+    print(f"{hyperparams}: {val_acc}")
+```
+
 ---
 
 ## The rationale to map the business requirements to the Data Visualisations and ML tasks
