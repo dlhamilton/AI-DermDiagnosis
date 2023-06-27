@@ -432,8 +432,6 @@ plt.show()
 ```
 ![Labels distribution](outputs/modelling_evaluation_v2/labels_distribution.png)
 
-
-#### Defining the ML pipeline steps
 #### Conducting hyperparameter optimization
 #### Assessing feature importance
 #### Augmenting images and loading from folder to memory
@@ -452,6 +450,40 @@ train_set.class_indices
 ```
 
 #### Defining neural network architecture
+```
+def create_tf_model(num_classes, input_shape=image_shape):
+    # Defining base model using Xception module from Keras
+    base_model = Xception(include_top=False, weights='imagenet', input_shape=input_shape)
+    for layer in base_model.layers:
+        layer.trainable = True
+    
+    # Initialize the Sequential model
+    model = Sequential()
+    
+    # Adding the base model
+    model.add(base_model)
+
+    # Adding Flatten Layer
+    model.add(Flatten())
+
+    # Adding Dense Layers
+    model.add(Dense(128))
+    model.add(Dropout(0.5))
+    model.add(BatchNormalization())
+    model.add(Activation('relu'))
+
+    # Output Layer
+    model.add(Dense(num_classes))
+
+    # Compiling the model
+    model.compile(loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True),
+                  optimizer='adam',
+                  metrics=['accuracy'])
+
+    # Return the compiled model
+    return model
+```
+
 #### Using techniques to prevent overfitting (such as early stopping and dropout layer)
 
 ```
