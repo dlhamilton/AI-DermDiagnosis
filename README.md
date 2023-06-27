@@ -231,7 +231,7 @@ The purpose of these iterations was to explore various approaches and evaluate t
 
 By employing techniques such as SMOTE upsampling and downsampling, the previous iterations aimed to address the class imbalance problem by either generating synthetic samples or reducing the number of majority class samples. These techniques were used in conjunction with different models to examine their impact on model performance.
 
-Overall, these iterations demonstrate a comprehensive exploration of techniques and models, reflecting a deep understanding of the challenges posed by imbalanced data and a systematic approach to finding effective solutions. Below are some of the tasks that I used to help perfect the model
+Overall, these iterations demonstrate a comprehensive exploration of techniques and models, reflecting a deep understanding of the challenges posed by imbalanced data and a systematic approach to finding effective solutions. Below are some of the tasks that I used to help perfect the model.mYou can see the full solutions in the jupyter_notbooks.
 
 ### Model Tasks
 
@@ -432,8 +432,6 @@ plt.show()
 ```
 ![Labels distribution](outputs/modelling_evaluation_v2/labels_distribution.png)
 
-#### Conducting hyperparameter optimization
-#### Assessing feature importance
 #### Augmenting images and loading from folder to memory
 
 ```
