@@ -447,6 +447,23 @@ print(image_shape[:2])
 train_set.class_indices
 ```
 
+#### SMOTE for imbalance
+```
+from imblearn.over_sampling import SMOTE
+
+# Create SMOTE instance
+oversample = SMOTE()
+
+# Apply SMOTE to the training data (not test data)
+Data_train, Label_train = oversample.fit_resample(Data_train, Label_train)
+
+# Reshape the data if needed
+Data_train = np.array(Data_train).reshape(image_shape)
+
+# Print the shape of the data
+print('Shape of Data:', Data_train.shape)
+```
+
 #### Defining neural network architecture
 ```
 def create_tf_model(num_classes, input_shape=image_shape):
