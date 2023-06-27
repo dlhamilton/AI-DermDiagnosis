@@ -374,7 +374,7 @@ Data Privacy: Given the sensitive nature of medical images, ensure all data is h
 
 ### Pages
 
-**Project Summary** - This page provides an overall summary of the project. Showing the outline of the system, information about the data set, the business requirments and a link to this read me.
+**Project Summary** - This page provides an overall summary of the project. Showing the outline of the system, information about the data set, the business requirments and a link to this read me. This answers Business Requirement 4.
 
 - Project Description: Brief text block summarizing the project, the goals, and the proposed AI solution.
 - Warning: Explaining he importance of seeing a medical profession for a check up. 
@@ -384,7 +384,7 @@ Data Privacy: Given the sensitive nature of medical images, ensure all data is h
 - Read Me Link: A clickable button or hyperlink leading to a more detailed project documentation.
 ![Project Summary Page](readme_images/screenshot_1.png)
 
-**Lesion Exploration** - This page provides a overview of the lesions so you can see the differances.
+**Lesion Exploration** - This page provides a overview of the lesions so you can see the differances. This answers Business Requirement 1, 4, 5, 7.
 
 - Lesion Visualizer: A section that provides an overview of the lesion exploration functionality.
 - Information about Each Lesion Class: A checkbox option to display information about each lesion class, including descriptions and characteristics of different types of skin lesions.
@@ -399,7 +399,7 @@ Data Privacy: Given the sensitive nature of medical images, ensure all data is h
 Note: Each checkbox option can be independently selected or deselected to control the visibility of the corresponding visualization on the page.
 ![Lesion Exploration Page](readme_images/screenshot_2.png)
 
-**Upload page and Results** - This page allows users (either individuals or healthcare professionals) to upload a skin lesion image for diagnosis. After the image is processed, the diagnosis and confidence level.
+**Upload page and Results** - This page allows users (either individuals or healthcare professionals) to upload a skin lesion image for diagnosis. After the image is processed, the diagnosis and confidence level. This answers Business Requirement 1, 2, 3, 4 and 5.
 
 - Image Upload Interface: A form or button allowing users to upload skin lesion images for analysis.
 - Diagnosis Display: A text block or similar element showing the diagnosis once the image has been processed.
@@ -412,12 +412,30 @@ Note: Each checkbox option can be independently selected or deselected to contro
 - Validation Approach: A text block explaining how each hypothesis is or will be validated.
 ![Project Hypothesis and Validation Page](readme_images/screenshot_4.png)
 
-**ML Performance Page** - This page presents detailed metrics on the performance of the AI model. It might include confusion matrix, ROC curve, precision-recall curve, F1 score, AUC-ROC value, etc. It can also include a comparison of performance metrics over different versions of the model.
+**ML Performance Page** - This page presents detailed metrics on the performance of the AI model. It might include confusion matrix, ROC curve, precision-recall curve, F1 score, AUC-ROC value, etc. It can also include a comparison of performance metrics over different versions of the model. This answers Business Requirement 6 and 7.
 
 - Model Metrics: Various visualizations (like confusion matrix, ROC curve, precision-recall curve) showing detailed performance metrics for the AI model.
 - Model Comparison: A table or graph comparing the performance of different model versions or configurations.
 - Model Interpretation: A text block explaining what these metrics mean in terms of model performance and quality.
 ![ML Performance Page](readme_images/screenshot_5.png)
+
+The information on the ML Performance Page are:
+1. Distribution - ![Distribution](outputs/modelling_evaluation_v2/labels_distribution.png)
+  - This image the dataset size and label frequencies and displays the target inequality. Using augmentaion has to be careful because the image could get warp so that it doesnt look like a lesion.
+2. Model training acc - ![Model training acc](outputs/modelling_evaluation_v5/model_training_acc.png)
+   - This shows the model by epoch, specifically the accuracy per epoch, is displayed. 
+3. Model training losses - ![Model training losses](outputs/modelling_evaluation_v5/model_training_losses.png)
+  - This shows the model by epoch, specifically the loss per epoch, is displayed. 
+4. Generalised Performance on Test Set - ![Generalised Performance on Test Set](readme_images/generalised_performance.png)
+  - This shows the loss and accuracy for the model.
+5. Confusion matrix - ![Confusion matrix](outputs/modelling_evaluation_v5/confusion_matrix.png)
+  - A confusion matrix for predicted and actual outcomes for the test set is shown here. 
+6. Classification report - ![Classification report](readme_images/classification_report.png)
+  - This classification report provides various metrics to evaluate the performance of a classification model.
+7. Roc curves - ![Roc curves](outputs/modelling_evaluation_v5/roc_curves.png)
+  - ROC curves are graphical representations is used to evaluate the performance of binary classification models
+8. Precision recall curves - ![Precision recall curves](outputs/modelling_evaluation_v5/precision_recall_curves.png)
+  - Precision-Recall curves is used to evaluate the performance of a binary classification model, particularly in this case where there is class imbalance.
 
 **Feedback / Reporting Page** - This page allows users to provide feedback on the system's performance and report any issues. It could be a form where users can rate the system, leave comments, or report false positives/negatives. It will also show future features for the system.
 
